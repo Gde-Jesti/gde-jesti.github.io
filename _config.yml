@@ -1,6 +1,6 @@
 name: Gde Jesti
 description: Pronađite najbolje kafane i restorane u Srbiji!
-url: ""
+url: "https://gde-jesti.github.io/"
 baseurl: ""
 # No global permalink
 # permalink: pretty
