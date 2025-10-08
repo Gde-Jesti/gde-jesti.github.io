@@ -1,0 +1,2235 @@
+<!DOCTYPE html>
+<html lang="sr" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gde Jesti - Katalog Kafana i Restorana | Gde Jesti</title>
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <meta name="description" content="Pronađite najbolje kafane i restorane u Srbiji!">
+    <meta name="author" content="Petar Škrbić">
+    <meta name="keywords" content="restorani, kafane, domaća kuhinja, ćevapi, sarma, gibanica, jela, hrana, gde jesti, gde jest, restoran, kafana, jelovnik, meniji, pretraga restorana, pretraga kafana">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Gde Jesti - Katalog Kafana i Restorana | Gde Jesti</title>
+<meta name="generator" content="Jekyll v4.3.4" />
+<meta property="og:title" content="Gde Jesti - Katalog Kafana i Restorana" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Pronađi najbolje kafiće i restorane u Srbiji po jelu, lokaciji i ceni!" />
+<meta property="og:description" content="Pronađi najbolje kafiće i restorane u Srbiji po jelu, lokaciji i ceni!" />
+<link rel="canonical" href="http://localhost:4000/" />
+<meta property="og:url" content="http://localhost:4000/" />
+<meta property="og:site_name" content="Gde Jesti" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Gde Jesti - Katalog Kafana i Restorana" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebSite","description":"Pronađi najbolje kafiće i restorane u Srbiji po jelu, lokaciji i ceni!","headline":"Gde Jesti - Katalog Kafana i Restorana","name":"Gde Jesti","url":"http://localhost:4000/"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <style>
+        :root {
+            --color-primary: #FF9900;
+            --color-secondary: #232F3E;
+            --color-background: #EAEDED;
+            --color-card-background: #FFFFFF;
+            --color-header-red: #A30000;
+            --color-accent: #4B0082;
+            --color-border: #D5DBDB;
+            --color-text: #1A1A1A;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: var(--color-background);
+            color: var(--color-text);
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        
+        main {
+            flex-grow: 1;
+        }
+
+        header {
+            background: linear-gradient(45deg, var(--color-header-red), var(--color-primary), var(--color-accent));
+            background-size: 300% 100%;
+            color: white;
+            text-align: center;
+            padding: 1.5rem 1rem;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            animation: gradientShift 10s ease-in-out infinite;
+        }
+
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            font-weight: 700;
+        }
+
+        header p {
+            margin: 0.5rem 0 0;
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        #filters {
+            display: flex;
+            gap: 1rem;
+            padding: 1.5rem 1rem;
+            background: var(--color-card-background);
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+            flex-wrap: wrap;
+            justify-content: center;
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        #filters input, select {
+            padding: 0.75rem 1rem;
+            
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-size: 1rem;
+            min-width: 250px;
+            transition: border-color 0.2s;
+        }
+
+        #filters input:focus, select:focus {
+            border-color: var(--color-primary);
+            outline: none;
+            box-shadow: 0 0 0 2px rgba(255, 153, 0, 0.2);
+        }
+
+        #filters button {
+            
+            background: var(--color-primary);
+            color: var(--color-secondary);
+            font-weight: bold;
+            cursor: pointer;
+            
+            font-size: 1rem;
+            transition: background 0.2s, opacity 0.2s;
+        }
+
+        #filters button:hover {
+            background: #F8B451;
+        }
+
+        .filter-buttons {
+            display: flex;
+            gap: 0.5rem;
+            border-radius: 1rem;
+        }
+
+        #catalog {
+            padding: 2rem 1rem;
+        }
+
+        #results-static {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.5rem;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .no-results {
+            text-align: center;
+            padding: 2rem;
+            font-size: 1.2rem;
+            color: var(--color-secondary);
+            background: var(--color-card-background);
+            border: 1px solid var(--color-border);
+            border-radius: 8px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+            margin: 1rem auto;
+            max-width: 600px;
+        }
+
+        .no-results p {
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        .restaurant-card {
+            background: var(--color-card-background);
+            border: 1px solid var(--color-border);
+            border-radius: 8px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+            cursor: pointer;
+            min-height: 250px;
+            box-sizing: border-box;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            color: #fff;
+            overflow: hidden;
+            transition: transform 0.2s, box-shadow 0.2s;
+            text-decoration: none;
+        }
+
+        .restaurant-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+        }
+
+        .restaurant-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.1) 60%);
+            border-radius: 8px;
+            z-index: 0;
+        }
+
+        .restaurant-card .card-content {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            z-index: 1;
+            display: flex;
+            flex-direction: column;
+            padding: 1rem;
+        }
+
+        .restaurant-card h3 {
+            margin: 0 0 0.5rem;
+            font-size: 1.4rem;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 1);
+            line-height: 1.2;
+        }
+
+        .restaurant-card p {
+            margin: 0.25rem 0;
+            font-size: 0.95rem;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 1);
+            font-weight: 500;
+        }
+
+        #imageModal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+            overflow: auto;
+        }
+
+        #modalContent {
+            position: relative;
+            max-width: 90%;
+            max-height: 90%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        #modalImage {
+            max-width: 100%;
+            max-height: 80vh;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        .modal-nav {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .modal-nav-button {
+            padding: 0.5rem 1rem;
+            background: var(--color-primary);
+            color: var(--color-secondary);
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background 0.2s;
+            width: 120px;
+            text-align: center;
+        }
+
+        .modal-nav-button:hover {
+            background: #F8B451;
+        }
+
+        .modal-nav-button:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+        }
+
+        .modal-close {
+            position: absolute;
+            top: -40px;
+            right: 0;
+            background: var(--color-header-red);
+            color: white;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            padding: 0.25rem 0.6rem;
+            border-radius: 50%;
+            z-index: 1010;
+        }
+
+        .modal-close:hover {
+            background: #8B0000;
+        }
+
+        #dishTabs {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            margin-top: 0.5rem;
+            width: 100%;
+            justify-content: center;
+            box-sizing: border-box;
+            padding: 0 1rem;
+        }
+
+        .dish-tab {
+            padding: 0.5rem 1rem;
+            border: 1px solid var(--color-border);
+            background: #f9f9f9;
+            cursor: pointer;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            transition: background 0.2s, color 0.2s, border-color 0.2s;
+        }
+
+        .dish-tab:hover {
+            background: #e0e0e0;
+        }
+
+        .dish-tab.active {
+            background: var(--color-header-red);
+            color: white;
+            border-color: var(--color-header-red);
+            font-weight: bold;
+        }
+
+        .scroll-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .scroll-button {
+            padding: 0.75rem 1.5rem;
+            font-size: 1rem;
+            border: 1px solid var(--color-primary);
+            background: var(--color-card-background);
+            color: var(--color-primary);
+            cursor: pointer;
+            border-radius: 4px;
+            font-weight: bold;
+            transition: background 0.2s;
+        }
+
+        .scroll-button:hover:not(:disabled) {
+            background: #fff5e6;
+        }
+
+        .scroll-button:disabled {
+            cursor: not-allowed;
+            opacity: 0.6;
+            color: #777;
+            border-color: #ccc;
+            background: #f9f9f9;
+        }
+
+        #locationSuggestions, #dishSuggestions {
+            position: absolute;
+            background: white;
+            border: 1px solid var(--color-border);
+            border-radius: 4px;
+            max-height: 150px;
+            overflow-y: auto;
+            width: 100%;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            z-index: 10;
+            display: none;
+            top: 100%;
+        }
+
+        .suggestion {
+            padding: 0.75rem 1rem;
+            cursor: pointer;
+        }
+
+        .suggestion:hover {
+            background: #f0f0f0;
+        }
+
+        #loading {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 10;
+        }
+
+        .loader {
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid var(--color-header-red);
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+        }
+
+        #mission {
+            background: var(--color-card-background);
+            margin: 2rem 1rem;
+            padding: 2rem;
+            border-radius: 8px;
+            border: 1px solid var(--color-border);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            text-align: center;
+            border: 2px solid var(--color-primary);
+        }
+
+        #mission .mission-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        #mission h2 {
+            font-size: 2rem;
+            color: var(--color-secondary);
+            border-bottom: 2px solid var(--color-primary);
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        #mission h3 {
+            font-size: 1.4rem;
+            color: var(--color-secondary);
+            margin: 1.5rem 0 0.5rem;
+        }
+
+        #mission p {
+            font-size: 1rem;
+            line-height: 1.6;
+            color: var(--color-text);
+            margin: 0.5rem 0;
+        }
+
+        #mission .mission-content a {
+            color: var(--color-primary);
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        #mission .mission-content a:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            text-align: center;
+            padding: 1.5rem;
+            background: #F8F8F8;
+            color: #555;
+            font-size: 0.9rem;
+            border-top: 1px solid var(--color-border);
+            margin-top: auto;
+            border: 2px solid var(--color-primary);
+        }
+
+        footer a {
+            color: var(--color-header-red);
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        hr {
+            display: none;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        @media (max-width: 900px) {
+            #results-static {
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            }
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2rem;
+            }
+
+            #filters {
+                flex-direction: column;
+                gap: 0.75rem;
+                padding: 1rem;
+            }
+
+            #filters input, select, button {
+                
+                width: 100%;
+                font-size: 0.95rem;
+                padding: 0.6rem 1rem;
+            }
+
+            #catalog {
+                padding: 1rem;
+            }
+
+            #results-static {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .restaurant-card {
+                min-height: 200px;
+            }
+
+            .no-results {
+                font-size: 1rem;
+                padding: 1.5rem;
+                margin: 1rem 0.5rem;
+            }
+
+            #dishTabs {
+                margin-top: 0.5rem;
+                flex-wrap: nowrap;
+                overflow-x: auto;
+                justify-content: flex-start;
+                padding: 0 0.25rem;
+                -ms-overflow-style: none;
+                scrollbar-width: none;
+            }
+
+            #dishTabs::-webkit-scrollbar {
+                display: none;
+            }
+
+            .dish-tab {
+                padding: 0.4rem 0.8rem;
+            }
+
+            #mission {
+                margin: 1rem 0.5rem;
+                padding: 1.5rem;
+                border: 2px solid var(--color-primary);
+            }
+
+            #mission h2 {
+                font-size: 1.8rem;
+            }
+
+            #mission h3 {
+                font-size: 1.2rem;
+            }
+
+            #mission p {
+                font-size: 0.95rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <head>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "ItemList",
+        "name": "Gde Jesti Restaurant Catalog",
+        "description": "A catalog of restaurants and cafes in Serbia, filtered by dish, location, and price range.",
+        "url": "http://localhost:4000",
+        "itemListElement": [
+            
+            {
+                "@type": "Restaurant",
+                "name": "Boss Caffe Picerija",
+                "address": {
+                    "@type": "PostalAddress",
+                    "addressLocality": "Subotica"
+                },
+                "servesCuisine": "Pizza, Steak, Roštilj, Ćevapi, Pljeskavica, Supa, Salate, Desert, Jela sa prženjem, Jela od mesa",
+                "priceRange": "$$$",
+                "url": "http://localhost:4000/restoran/boss-caffe-picerija-subotica/",
+                "image": "https://media.istockphoto.com/id/172739813/photo/artificial-food.jpg?s=612x612&amp;w=0&amp;k=20&amp;c=3_jqHTtdV8r3W4Bm_5V0CEKXuU689WHsd9-3yhYRKGo="
+            },
+            
+            {
+                "@type": "Restaurant",
+                "name": "Stara Picerija – Since 1977",
+                "address": {
+                    "@type": "PostalAddress",
+                    "addressLocality": "Subotica"
+                },
+                "servesCuisine": "Pizza, Supa, Salate, Ćevapi, Pljeskavica, Gulaš, Jela od mesa, Deserti, Jagnjetina, Punjene Paprike",
+                "priceRange": "$$",
+                "url": "http://localhost:4000/restoran/stara-picerija-since-1977-subotica/",
+                "image": "https://media.istockphoto.com/id/172739813/photo/artificial-food.jpg?s=612x612&amp;w=0&amp;k=20&amp;c=3_jqHTtdV8r3W4Bm_5V0CEKXuU689WHsd9-3yhYRKGo="
+            },
+            
+            {
+                "@type": "Restaurant",
+                "name": "DENIS Gastro Temple",
+                "address": {
+                    "@type": "PostalAddress",
+                    "addressLocality": "Subotica"
+                },
+                "servesCuisine": "Pizza, Riblja Čorba, Pečena Riba, Steak, Ćevapi, Pljeskavica, Supa, Salate, Pasta, Jela od mesa",
+                "priceRange": "$$$",
+                "url": "http://localhost:4000/restoran/denis-gastro-temple-subotica/",
+                "image": "https://media.istockphoto.com/id/172739813/photo/artificial-food.jpg?s=612x612&amp;w=0&amp;k=20&amp;c=3_jqHTtdV8r3W4Bm_5V0CEKXuU689WHsd9-3yhYRKGo="
+            },
+            
+            {
+                "@type": "Restaurant",
+                "name": "Gostiona Madera",
+                "address": {
+                    "@type": "PostalAddress",
+                    "addressLocality": "Subotica"
+                },
+                "servesCuisine": "Jela od mesa, Riblja Čorba, Pečena Riba, Salate, Steak, Ćevapi, Supa, Pljeskavica, Deserti, Jagnjetina",
+                "priceRange": "$$",
+                "url": "http://localhost:4000/restoran/gostiona-madera-subotica/",
+                "image": "https://media.istockphoto.com/id/172739813/photo/artificial-food.jpg?s=612x612&amp;w=0&amp;k=20&amp;c=3_jqHTtdV8r3W4Bm_5V0CEKXuU689WHsd9-3yhYRKGo="
+            },
+            
+            {
+                "@type": "Restaurant",
+                "name": "Restoran Bulevar",
+                "address": {
+                    "@type": "PostalAddress",
+                    "addressLocality": "Subotica"
+                },
+                "servesCuisine": "Jela od mesa, Salate, Supa, Deserti, Ćevapi, Pljeskavica, Gulaš, Pizza, Jagnjetina, Punjene Paprike",
+                "priceRange": "$$",
+                "url": "http://localhost:4000/restoran/restoran-bulevar-subotica/",
+                "image": "https://media.istockphoto.com/id/172739813/photo/artificial-food.jpg?s=612x612&amp;w=0&amp;k=20&amp;c=3_jqHTtdV8r3W4Bm_5V0CEKXuU689WHsd9-3yhYRKGo="
+            },
+            
+            {
+                "@type": "Restaurant",
+                "name": "MARA Lounge &amp; Bar",
+                "address": {
+                    "@type": "PostalAddress",
+                    "addressLocality": "Subotica"
+                },
+                "servesCuisine": "Kafa, Sendviči, Limunada, Doručak, Pivo, Panceroti, Pileća Korpa, Roštilj, Ovali, Omlet, Palačinke, Salate, Pomfrit",
+                "priceRange": "$$",
+                "url": "http://localhost:4000/restoran/mara-lounge-bar-subotica/",
+                "image": "https://media.istockphoto.com/id/172739813/photo/artificial-food.jpg?s=612x612&amp;w=0&amp;k=20&amp;c=3_jqHTtdV8r3W4Bm_5V0CEKXuU689WHsd9-3yhYRKGo="
+            },
+            
+            {
+                "@type": "Restaurant",
+                "name": "Bowling-Restaurant Krupara",
+                "address": {
+                    "@type": "PostalAddress",
+                    "addressLocality": "Bačko Dušanovo"
+                },
+                "servesCuisine": "Roštilj, Ćevapi, Pljeskavica, Gulaš, Jela od mesa, Supa, Salate, Pečena Riba, Deserti, Punjene Paprike",
+                "priceRange": "$$",
+                "url": "http://localhost:4000/restoran/bowling-restaurant-krupara-backo-dusanovo/",
+                "image": "https://media.istockphoto.com/id/172739813/photo/artificial-food.jpg?s=612x612&amp;w=0&amp;k=20&amp;c=3_jqHTtdV8r3W4Bm_5V0CEKXuU689WHsd9-3yhYRKGo="
+            },
+            
+            {
+                "@type": "Restaurant",
+                "name": "Gostiona Gurinović",
+                "address": {
+                    "@type": "PostalAddress",
+                    "addressLocality": "Subotica"
+                },
+                "servesCuisine": "Roštilj, Ćevapi, Pljeskavica, Gulaš, Sarma, Supa, Salate, Pečena Riba, Jela od mesa, Deserti",
+                "priceRange": "$$",
+                "url": "http://localhost:4000/restoran/gostiona-gurinovic-subotica/",
+                "image": "https://media.istockphoto.com/id/172739813/photo/artificial-food.jpg?s=612x612&amp;w=0&amp;k=20&amp;c=3_jqHTtdV8r3W4Bm_5V0CEKXuU689WHsd9-3yhYRKGo="
+            },
+            
+            {
+                "@type": "Restaurant",
+                "name": "Gyros Way",
+                "address": {
+                    "@type": "PostalAddress",
+                    "addressLocality": "Subotica"
+                },
+                "servesCuisine": "Giros, Pileći, Vegetarijanski, Tortilja, Pomfrit, Salata, Sosovi, Piće",
+                "priceRange": "povremeno jeftino-srednje",
+                "url": "http://localhost:4000/restoran/gyros-way-subotica/",
+                "image": "https://lh3.googleusercontent.com/p/AF1QipNelX_9ItCWYIu4axgFSfcxDSZzzHANZDWIKHCe=s680-w680-h510-rw"
+            },
+            
+            {
+                "@type": "Restaurant",
+                "name": "Gostiona Petica",
+                "address": {
+                    "@type": "PostalAddress",
+                    "addressLocality": "Subotica"
+                },
+                "servesCuisine": "Jela od mesa, Ćevapi, Pljeskavica, Supa, Sarma, Gulaš, Punjene Paprike, Salate, Deserti, Burek",
+                "priceRange": "$$",
+                "url": "http://localhost:4000/restoran/gostiona-petica-subotica/",
+                "image": "https://media.istockphoto.com/id/172739813/photo/artificial-food.jpg?s=612x612&amp;w=0&amp;k=20&amp;c=3_jqHTtdV8r3W4Bm_5V0CEKXuU689WHsd9-3yhYRKGo="
+            },
+            
+            {
+                "@type": "Restaurant",
+                "name": "Konoba Kujundžić",
+                "address": {
+                    "@type": "PostalAddress",
+                    "addressLocality": "Subotica"
+                },
+                "servesCuisine": "Riblja Čorba, Pečena Riba, Jela od mesa, Ćevapi, Pljeskavica, Gulaš, Sarma, Salate, Supa, Deserti",
+                "priceRange": "$$",
+                "url": "http://localhost:4000/restoran/konoba-kujundzic-subotica/",
+                "image": "https://media.istockphoto.com/id/172739813/photo/artificial-food.jpg?s=612x612&amp;w=0&amp;k=20&amp;c=3_jqHTtdV8r3W4Bm_5V0CEKXuU689WHsd9-3yhYRKGo="
+            },
+            
+            {
+                "@type": "Restaurant",
+                "name": "Konoba Tinel",
+                "address": {
+                    "@type": "PostalAddress",
+                    "addressLocality": "Subotica"
+                },
+                "servesCuisine": "Riblja Čorba, Pečena Riba, Pasta, Salate, Ćevapi, Pljeskavica, Supa, Deserti, Jela od mesa, Jagnjetina",
+                "priceRange": "$$",
+                "url": "http://localhost:4000/restoran/konoba-tinel-subotica/",
+                "image": "https://media.istockphoto.com/id/172739813/photo/artificial-food.jpg?s=612x612&amp;w=0&amp;k=20&amp;c=3_jqHTtdV8r3W4Bm_5V0CEKXuU689WHsd9-3yhYRKGo="
+            },
+            
+            {
+                "@type": "Restaurant",
+                "name": "Restoran Bon Appetit (Dudova Šuma)",
+                "address": {
+                    "@type": "PostalAddress",
+                    "addressLocality": "Subotica"
+                },
+                "servesCuisine": "Jela od mesa, Steak, Pizza, Salate, Supa, Deserti, Ćevapi, Pljeskavica, Gulaš, Punjene Paprike",
+                "priceRange": "$$",
+                "url": "http://localhost:4000/restoran/restoran-bon-appetit-dudova-suma-subotica/",
+                "image": "https://media.istockphoto.com/id/172739813/photo/artificial-food.jpg?s=612x612&amp;w=0&amp;k=20&amp;c=3_jqHTtdV8r3W4Bm_5V0CEKXuU689WHsd9-3yhYRKGo="
+            },
+            
+            {
+                "@type": "Restaurant",
+                "name": "Oliva Pizzeria &amp; Salad Bar",
+                "address": {
+                    "@type": "PostalAddress",
+                    "addressLocality": "Novi Sad"
+                },
+                "servesCuisine": "Pizza, Salate, Pasta, Roštilj, Supa, Deserti, Ćevapi, Gulaš, Pečena Riba, Pljeskavica",
+                "priceRange": "$$",
+                "url": "http://localhost:4000/restoran/oliva-pizzeria-salad-bar-novi-sad/",
+                "image": "https://media.istockphoto.com/id/172739813/photo/artificial-food.jpg?s=612x612&amp;w=0&amp;k=20&amp;c=3_jqHTtdV8r3W4Bm_5V0CEKXuU689WHsd9-3yhYRKGo="
+            },
+            
+            {
+                "@type": "Restaurant",
+                "name": "Nolita Pizzeria",
+                "address": {
+                    "@type": "PostalAddress",
+                    "addressLocality": "Novi Sad"
+                },
+                "servesCuisine": "Pizza, Pasta, Salate, Roštilj, Supa, Deserti, Ćevapi, Gulaš, Pečena Riba, Pljeskavica",
+                "priceRange": "$$",
+                "url": "http://localhost:4000/restoran/nolita-pizzeria-novi-sad/",
+                "image": "https://media.istockphoto.com/id/172739813/photo/artificial-food.jpg?s=612x612&amp;w=0&amp;k=20&amp;c=3_jqHTtdV8r3W4Bm_5V0CEKXuU689WHsd9-3yhYRKGo="
+            },
+            
+            {
+                "@type": "Restaurant",
+                "name": "Petrus Gastro Bar",
+                "address": {
+                    "@type": "PostalAddress",
+                    "addressLocality": "Novi Sad"
+                },
+                "servesCuisine": "Internacionalna, Roštilj, Jela od mesa, Supa, Salate, Deserti, Ćevapi, Gulaš, Pečena Riba, Pljeskavica",
+                "priceRange": "$$",
+                "url": "http://localhost:4000/restoran/petrus-gastro-bar-novi-sad/",
+                "image": "https://media.istockphoto.com/id/172739813/photo/artificial-food.jpg?s=612x612&amp;w=0&amp;k=20&amp;c=3_jqHTtdV8r3W4Bm_5V0CEKXuU689WHsd9-3yhYRKGo="
+            },
+            
+            {
+                "@type": "Restaurant",
+                "name": "Toster Bar",
+                "address": {
+                    "@type": "PostalAddress",
+                    "addressLocality": "Novi Sad"
+                },
+                "servesCuisine": "Burger, pljeskavica, vege varijanta, sendvič, prilog, meza, pivo",
+                "priceRange": "$",
+                "url": "http://localhost:4000/restoran/toster-bar-novi-sad/",
+                "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS9vpNRP5MGv639M2haXLl8Wh0BJyGWra9Dpg&amp;s"
+            },
+            
+            {
+                "@type": "Restaurant",
+                "name": "Mon Ami Marine Club",
+                "address": {
+                    "@type": "PostalAddress",
+                    "addressLocality": "Novi Sad"
+                },
+                "servesCuisine": "Riblja Čorba, Pečena Riba, Supa, Salate, Deserti, Ćevapi, Gulaš, Jela od mesa, Pljeskavica, Pizza",
+                "priceRange": "$$$",
+                "url": "http://localhost:4000/restoran/mon-ami-marine-club-novi-sad/",
+                "image": "https://media.istockphoto.com/id/172739813/photo/artificial-food.jpg?s=612x612&amp;w=0&amp;k=20&amp;c=3_jqHTtdV8r3W4Bm_5V0CEKXuU689WHsd9-3yhYRKGo="
+            },
+            
+            {
+                "@type": "Restaurant",
+                "name": "Herc Food",
+                "address": {
+                    "@type": "PostalAddress",
+                    "addressLocality": "Novi Sad"
+                },
+                "servesCuisine": "Domaća kuhinja, Sendviči, Panirano jelo",
+                "priceRange": "$",
+                "url": "http://localhost:4000/restoran/herc-food-novi-sad/",
+                "image": "https://media.istockphoto.com/id/172739813/photo/artificial-food.jpg?s=612x612&amp;w=0&amp;k=20&amp;c=3_jqHTtdV8r3W4Bm_5V0CEKXuU689WHsd9-3yhYRKGo="
+            },
+            
+            {
+                "@type": "Restaurant",
+                "name": "Remek Jelo",
+                "address": {
+                    "@type": "PostalAddress",
+                    "addressLocality": "Novi Sad"
+                },
+                "servesCuisine": "Domaća kuhinja, Kuvana jela",
+                "priceRange": "$$",
+                "url": "http://localhost:4000/restoran/remek-jelo-novi-sad/",
+                "image": "https://media.istockphoto.com/id/172739813/photo/artificial-food.jpg?s=612x612&amp;w=0&amp;k=20&amp;c=3_jqHTtdV8r3W4Bm_5V0CEKXuU689WHsd9-3yhYRKGo="
+            },
+            
+            {
+                "@type": "Restaurant",
+                "name": "Pikanterija Bar",
+                "address": {
+                    "@type": "PostalAddress",
+                    "addressLocality": "Novi Sad"
+                },
+                "servesCuisine": "Roštilj, Pohovana jela, Kuvana jela, Burgere",
+                "priceRange": "$$",
+                "url": "http://localhost:4000/restoran/pikanterija-bar-novi-sad/",
+                "image": "https://media.istockphoto.com/id/172739813/photo/artificial-food.jpg?s=612x612&amp;w=0&amp;k=20&amp;c=3_jqHTtdV8r3W4Bm_5V0CEKXuU689WHsd9-3yhYRKGo="
+            },
+            
+            {
+                "@type": "Restaurant",
+                "name": "Danka Bar",
+                "address": {
+                    "@type": "PostalAddress",
+                    "addressLocality": "Novi Sad"
+                },
+                "servesCuisine": "Sendviči, Pića",
+                "priceRange": "$",
+                "url": "http://localhost:4000/restoran/danka-bar-novi-sad/",
+                "image": "https://media.istockphoto.com/id/172739813/photo/artificial-food.jpg?s=612x612&amp;w=0&amp;k=20&amp;c=3_jqHTtdV8r3W4Bm_5V0CEKXuU689WHsd9-3yhYRKGo="
+            },
+            
+            {
+                "@type": "Restaurant",
+                "name": "The Nook",
+                "address": {
+                    "@type": "PostalAddress",
+                    "addressLocality": "Novi Sad"
+                },
+                "servesCuisine": "Italijanska kuhinja, Pizza, Pasta",
+                "priceRange": "$$",
+                "url": "http://localhost:4000/restoran/the-nook-novi-sad/",
+                "image": "https://media.istockphoto.com/id/172739813/photo/artificial-food.jpg?s=612x612&amp;w=0&amp;k=20&amp;c=3_jqHTtdV8r3W4Bm_5V0CEKXuU689WHsd9-3yhYRKGo="
+            },
+            
+            {
+                "@type": "Restaurant",
+                "name": "Kombinat Food",
+                "address": {
+                    "@type": "PostalAddress",
+                    "addressLocality": "Novi Sad"
+                },
+                "servesCuisine": "Internacionalna kuhinja, Jela od mesa, Roštilj",
+                "priceRange": "$$",
+                "url": "http://localhost:4000/restoran/kombinat-food-novi-sad/",
+                "image": "https://media.istockphoto.com/id/172739813/photo/artificial-food.jpg?s=612x612&amp;w=0&amp;k=20&amp;c=3_jqHTtdV8r3W4Bm_5V0CEKXuU689WHsd9-3yhYRKGo="
+            },
+            
+            {
+                "@type": "Restaurant",
+                "name": "Etno Restoran Fijaker",
+                "address": {
+                    "@type": "PostalAddress",
+                    "addressLocality": "Sombor"
+                },
+                "servesCuisine": "Roštilj, Ćevapi, Pljeskavica, Gulaš, Sarma, Supa, Salate, Pečena Riba, Jela od mesa, Deserti, Pizza",
+                "priceRange": "$$",
+                "url": "http://localhost:4000/restoran/etno-restoran-fijaker-sombor/",
+                "image": "https://media.istockphoto.com/id/172739813/photo/artificial-food.jpg?s=612x612&amp;w=0&amp;k=20&amp;c=3_jqHTtdV8r3W4Bm_5V0CEKXuU689WHsd9-3yhYRKGo="
+            },
+            
+            {
+                "@type": "Restaurant",
+                "name": "Restoran Stari Slon",
+                "address": {
+                    "@type": "PostalAddress",
+                    "addressLocality": "Sombor"
+                },
+                "servesCuisine": "Roštilj, Ćevapi, Pljeskavica, Riblja Čorba, Pečena Riba, Jela od mesa, Supa, Salate, Gulaš, Deserti",
+                "priceRange": "$$",
+                "url": "http://localhost:4000/restoran/restoran-stari-slon-sombor/",
+                "image": "https://media.istockphoto.com/id/172739813/photo/artificial-food.jpg?s=612x612&amp;w=0&amp;k=20&amp;c=3_jqHTtdV8r3W4Bm_5V0CEKXuU689WHsd9-3yhYRKGo="
+            },
+            
+            {
+                "@type": "Restaurant",
+                "name": "Riblja Čarda Andrić",
+                "address": {
+                    "@type": "PostalAddress",
+                    "addressLocality": "Sombor"
+                },
+                "servesCuisine": "Riblja Čorba, Pečena Riba, Šaran, Som, Supa, Salate, Jela od mesa, Roštilj, Ćevapi, Deserti",
+                "priceRange": "$$",
+                "url": "http://localhost:4000/restoran/riblja-carda-andric-sombor/",
+                "image": "https://media.istockphoto.com/id/172739813/photo/artificial-food.jpg?s=612x612&amp;w=0&amp;k=20&amp;c=3_jqHTtdV8r3W4Bm_5V0CEKXuU689WHsd9-3yhYRKGo="
+            },
+            
+            {
+                "@type": "Restaurant",
+                "name": "Konoba Tera",
+                "address": {
+                    "@type": "PostalAddress",
+                    "addressLocality": "Sombor"
+                },
+                "servesCuisine": "Pečena Riba, Riblja Čorba, Pasta, Salate, Jagnjetina, Supa, Deserti, Jela od mesa, Pizza, Roštilj",
+                "priceRange": "$$",
+                "url": "http://localhost:4000/restoran/konoba-tera-sombor/",
+                "image": "https://media.istockphoto.com/id/172739813/photo/artificial-food.jpg?s=612x612&amp;w=0&amp;k=20&amp;c=3_jqHTtdV8r3W4Bm_5V0CEKXuU689WHsd9-3yhYRKGo="
+            },
+            
+            {
+                "@type": "Restaurant",
+                "name": "Zlatna Kruna Carda",
+                "address": {
+                    "@type": "PostalAddress",
+                    "addressLocality": "Apatin"
+                },
+                "servesCuisine": "Riblja Čorba, Pečena Riba, Šaran, Som, Supa, Salate, Roštilj, Ćevapi, Pljeskavica, Deserti",
+                "priceRange": "$$",
+                "url": "http://localhost:4000/restoran/zlatna-kruna-carda-apatin/",
+                "image": "https://media.istockphoto.com/id/172739813/photo/artificial-food.jpg?s=612x612&amp;w=0&amp;k=20&amp;c=3_jqHTtdV8r3W4Bm_5V0CEKXuU689WHsd9-3yhYRKGo="
+            },
+            
+            {
+                "@type": "Restaurant",
+                "name": "Restoran Marina",
+                "address": {
+                    "@type": "PostalAddress",
+                    "addressLocality": "Apatin"
+                },
+                "servesCuisine": "Pečena Riba, Riblja Čorba, Šaran na rašljama, Supa, Salate, Jela od mesa, Roštilj, Pizza, Deserti, Pasta",
+                "priceRange": "$$",
+                "url": "http://localhost:4000/restoran/restoran-marina-apatin/",
+                "image": "https://media.istockphoto.com/id/172739813/photo/artificial-food.jpg?s=612x612&amp;w=0&amp;k=20&amp;c=3_jqHTtdV8r3W4Bm_5V0CEKXuU689WHsd9-3yhYRKGo="
+            },
+            
+            {
+                "@type": "Restaurant",
+                "name": "Plava Ruža",
+                "address": {
+                    "@type": "PostalAddress",
+                    "addressLocality": "Apatin"
+                },
+                "servesCuisine": "Steak, Jela od mesa, Pasta, Salate, Supa, Deserti, Riblja Čorba, Internacionalna kuhinja, Roštilj, Pizza",
+                "priceRange": "$$$",
+                "url": "http://localhost:4000/restoran/plava-ruza-apatin/",
+                "image": "https://media.istockphoto.com/id/172739813/photo/artificial-food.jpg?s=612x612&amp;w=0&amp;k=20&amp;c=3_jqHTtdV8r3W4Bm_5V0CEKXuU689WHsd9-3yhYRKGo="
+            },
+            
+            {
+                "@type": "Restaurant",
+                "name": "Garden House Apatin",
+                "address": {
+                    "@type": "PostalAddress",
+                    "addressLocality": "Apatin"
+                },
+                "servesCuisine": "Roštilj, Ćevapi, Pljeskavica, Supa, Salate, Deserti, Jela od mesa, Pizza, Pasta, Pića",
+                "priceRange": "$$",
+                "url": "http://localhost:4000/restoran/garden-house-apatin-apatin/",
+                "image": "https://media.istockphoto.com/id/172739813/photo/artificial-food.jpg?s=612x612&amp;w=0&amp;k=20&amp;c=3_jqHTtdV8r3W4Bm_5V0CEKXuU689WHsd9-3yhYRKGo="
+            },
+            
+            {
+                "@type": "Restaurant",
+                "name": "Restoran Agape",
+                "address": {
+                    "@type": "PostalAddress",
+                    "addressLocality": "Kula"
+                },
+                "servesCuisine": "Jela od mesa, Roštilj, Ćevapi, Pljeskavica, Supa, Salate, Gulaš, Deserti, Pizza, Sarma",
+                "priceRange": "$$",
+                "url": "http://localhost:4000/restoran/restoran-agape-kula/",
+                "image": "https://media.istockphoto.com/id/172739813/photo/artificial-food.jpg?s=612x612&amp;w=0&amp;k=20&amp;c=3_jqHTtdV8r3W4Bm_5V0CEKXuU689WHsd9-3yhYRKGo="
+            },
+            
+            {
+                "@type": "Restaurant",
+                "name": "Restoran Ćuprija",
+                "address": {
+                    "@type": "PostalAddress",
+                    "addressLocality": "Kula"
+                },
+                "servesCuisine": "Domaća kuhinja, Ćevapi, Pljeskavica, Gulaš, Sarma, Supa, Salate, Jela od mesa, Deserti, Punjene Paprike",
+                "priceRange": "$",
+                "url": "http://localhost:4000/restoran/restoran-cuprija-kula/",
+                "image": "https://media.istockphoto.com/id/172739813/photo/artificial-food.jpg?s=612x612&amp;w=0&amp;k=20&amp;c=3_jqHTtdV8r3W4Bm_5V0CEKXuU689WHsd9-3yhYRKGo="
+            },
+            
+            {
+                "@type": "Restaurant",
+                "name": "Galija restoran i dečija igraonica",
+                "address": {
+                    "@type": "PostalAddress",
+                    "addressLocality": "Sivac"
+                },
+                "servesCuisine": "Pljeskavica, Roštilj, Ćevapi, Salate, Jela od mesa, Pizza, Deserti",
+                "priceRange": "$$",
+                "url": "http://localhost:4000/restoran/galija-restoran-i-decija-igraonica-sivac/",
+                "image": "https://media.istockphoto.com/id/172739813/photo/artificial-food.jpg?s=612x612&amp;w=0&amp;k=20&amp;c=3_jqHTtdV8r3W4Bm_5V0CEKXuU689WHsd9-3yhYRKGo="
+            },
+            
+            {
+                "@type": "Restaurant",
+                "name": "Pitac Cafe &amp; Food Bar",
+                "address": {
+                    "@type": "PostalAddress",
+                    "addressLocality": "Kula"
+                },
+                "servesCuisine": "Pizza, Pasta, Sendviči, Salate, Supa, Deserti, Pića, Roštilj, Ćevapi, Limunada",
+                "priceRange": "$",
+                "url": "http://localhost:4000/restoran/pitac-cafe-food-bar-kula/",
+                "image": "https://media.istockphoto.com/id/172739813/photo/artificial-food.jpg?s=612x612&amp;w=0&amp;k=20&amp;c=3_jqHTtdV8r3W4Bm_5V0CEKXuU689WHsd9-3yhYRKGo="
+            }
+            
+        ]
+    }
+    </script>
+</head>
+
+<header>
+      <h1><a href="/" style="color: white; text-decoration: none; font-family: 'Arial', sans-serif;">Gde Jesti</a></h1>
+      <p>Pronađi najbolje kafiće i restorane po svom ukusu!</p>
+</header>
+
+<section id="filters">
+    <div style="position: relative;">
+        <input type="text" id="searchDish" placeholder="Pretraži po jelu (npr. ćevapi)">
+        <div id="dishSuggestions"></div>
+    </div>
+    <div style="position: relative;">
+        <input type="text" id="filterLocation" placeholder="Unesite mesto (npr. Novi Sad)">
+        <div id="locationSuggestions"></div>
+    </div>
+    <select id="filterPrice">
+        <option value="">Sve cene</option>
+        <option value="low">💰 Jeftino</option>
+        <option value="medium">💰💰 Srednje</option>
+        <option value="high">💰💰💰 Skupo</option>
+    </select>
+    <div class="filter-buttons">
+        <button onclick="applyFilters()">🔍</button>
+        <button onclick="clearFilters()">Očisti Filtere</button>
+    </div>
+    <div id="dishTabs">
+        
+            <button class="dish-tab" onclick="selectDishTab('Ćevapi')">Ćevapi</button>
+        
+            <button class="dish-tab" onclick="selectDishTab('Gulaš')">Gulaš</button>
+        
+            <button class="dish-tab" onclick="selectDishTab('Sarma')">Sarma</button>
+        
+            <button class="dish-tab" onclick="selectDishTab('Riblja Čorba')">Riblja Čorba</button>
+        
+            <button class="dish-tab" onclick="selectDishTab('Pečena Riba')">Pečena Riba</button>
+        
+            <button class="dish-tab" onclick="selectDishTab('Pizza')">Pizza</button>
+        
+            <button class="dish-tab" onclick="selectDishTab('Jagnjetina')">Jagnjetina</button>
+        
+            <button class="dish-tab" onclick="selectDishTab('Burek')">Burek</button>
+        
+            <button class="dish-tab" onclick="selectDishTab('Pljeskavica')">Pljeskavica</button>
+        
+            <button class="dish-tab" onclick="selectDishTab('Punjene Paprike')">Punjene Paprike</button>
+        
+            <button class="dish-tab" onclick="selectDishTab('Supa')">Supa</button>
+        
+            <button class="dish-tab" onclick="selectDishTab('Karađorđeva Šnicla')">Karađorđeva Šnicla</button>
+        
+            <button class="dish-tab" onclick="selectDishTab('Sendviči')">Sendviči</button>
+        
+            <button class="dish-tab" onclick="selectDishTab('Salate')">Salate</button>
+        
+    </div>
+</section>
+
+<section id="catalog">
+    <div id="loading" style="display: none;"><div class="loader"></div></div>
+    <div id="results-static">
+        
+            
+
+
+
+
+
+
+
+<a href="/restoran/boss-caffe-picerija-subotica/" class="restaurant-card" data-dishes="pizza, steak, roštilj, ćevapi, pljeskavica, supa, salate, desert, jela sa prženjem, jela od mesa" data-location="subotica" data-price="high" style="background-image: url('https://media.istockphoto.com/id/172739813/photo/artificial-food.jpg?s=612x612&amp;w=0&amp;k=20&amp;c=3_jqHTtdV8r3W4Bm_5V0CEKXuU689WHsd9-3yhYRKGo=');">
+    <div class="card-content">
+        <h3>Boss Caffe Picerija</h3>
+        <p><strong>Mesto:</strong> Subotica</p>
+        <p><strong>Jela:</strong> Pizza, Steak, Roštilj...</p>
+        <p><strong>Cena:</strong> <span class="price-emoji">High</span></p>
+    </div>
+</a>
+        
+            
+
+
+
+
+
+
+
+<a href="/restoran/stara-picerija-since-1977-subotica/" class="restaurant-card" data-dishes="pizza, supa, salate, ćevapi, pljeskavica, gulaš, jela od mesa, deserti, jagnjetina, punjene paprike" data-location="subotica" data-price="medium" style="background-image: url('https://media.istockphoto.com/id/172739813/photo/artificial-food.jpg?s=612x612&amp;w=0&amp;k=20&amp;c=3_jqHTtdV8r3W4Bm_5V0CEKXuU689WHsd9-3yhYRKGo=');">
+    <div class="card-content">
+        <h3>Stara Picerija – Since 1977</h3>
+        <p><strong>Mesto:</strong> Subotica</p>
+        <p><strong>Jela:</strong> Pizza, Supa, Salate...</p>
+        <p><strong>Cena:</strong> <span class="price-emoji">Medium</span></p>
+    </div>
+</a>
+        
+            
+
+
+
+
+
+
+
+<a href="/restoran/denis-gastro-temple-subotica/" class="restaurant-card" data-dishes="pizza, riblja čorba, pečena riba, steak, ćevapi, pljeskavica, supa, salate, pasta, jela od mesa" data-location="subotica" data-price="high" style="background-image: url('https://media.istockphoto.com/id/172739813/photo/artificial-food.jpg?s=612x612&amp;w=0&amp;k=20&amp;c=3_jqHTtdV8r3W4Bm_5V0CEKXuU689WHsd9-3yhYRKGo=');">
+    <div class="card-content">
+        <h3>DENIS Gastro Temple</h3>
+        <p><strong>Mesto:</strong> Subotica</p>
+        <p><strong>Jela:</strong> Pizza, Riblja Čorba, Pečena Riba...</p>
+        <p><strong>Cena:</strong> <span class="price-emoji">High</span></p>
+    </div>
+</a>
+        
+            
+
+
+
+
+
+
+
+<a href="/restoran/gostiona-madera-subotica/" class="restaurant-card" data-dishes="jela od mesa, riblja čorba, pečena riba, salate, steak, ćevapi, supa, pljeskavica, deserti, jagnjetina" data-location="subotica" data-price="medium" style="background-image: url('https://media.istockphoto.com/id/172739813/photo/artificial-food.jpg?s=612x612&amp;w=0&amp;k=20&amp;c=3_jqHTtdV8r3W4Bm_5V0CEKXuU689WHsd9-3yhYRKGo=');">
+    <div class="card-content">
+        <h3>Gostiona Madera</h3>
+        <p><strong>Mesto:</strong> Subotica</p>
+        <p><strong>Jela:</strong> Jela od mesa, Riblja Čorba, Pečena Riba...</p>
+        <p><strong>Cena:</strong> <span class="price-emoji">Medium</span></p>
+    </div>
+</a>
+        
+            
+
+
+
+
+
+
+
+<a href="/restoran/restoran-bulevar-subotica/" class="restaurant-card" data-dishes="jela od mesa, salate, supa, deserti, ćevapi, pljeskavica, gulaš, pizza, jagnjetina, punjene paprike" data-location="subotica" data-price="medium" style="background-image: url('https://media.istockphoto.com/id/172739813/photo/artificial-food.jpg?s=612x612&amp;w=0&amp;k=20&amp;c=3_jqHTtdV8r3W4Bm_5V0CEKXuU689WHsd9-3yhYRKGo=');">
+    <div class="card-content">
+        <h3>Restoran Bulevar</h3>
+        <p><strong>Mesto:</strong> Subotica</p>
+        <p><strong>Jela:</strong> Jela od mesa, Salate, Supa...</p>
+        <p><strong>Cena:</strong> <span class="price-emoji">Medium</span></p>
+    </div>
+</a>
+        
+            
+
+
+
+
+
+
+
+<a href="/restoran/mara-lounge-bar-subotica/" class="restaurant-card" data-dishes="kafa, sendviči, limunada, doručak, pivo, panceroti, pileća korpa, roštilj, ovali, omlet, palačinke, salate, pomfrit" data-location="subotica" data-price="medium" style="background-image: url('https://media.istockphoto.com/id/172739813/photo/artificial-food.jpg?s=612x612&amp;w=0&amp;k=20&amp;c=3_jqHTtdV8r3W4Bm_5V0CEKXuU689WHsd9-3yhYRKGo=');">
+    <div class="card-content">
+        <h3>MARA Lounge & Bar</h3>
+        <p><strong>Mesto:</strong> Subotica</p>
+        <p><strong>Jela:</strong> Kafa, Sendviči, Limunada...</p>
+        <p><strong>Cena:</strong> <span class="price-emoji">Medium</span></p>
+    </div>
+</a>
+        
+            
+
+
+
+
+
+
+
+<a href="/restoran/bowling-restaurant-krupara-backo-dusanovo/" class="restaurant-card" data-dishes="roštilj, ćevapi, pljeskavica, gulaš, jela od mesa, supa, salate, pečena riba, deserti, punjene paprike" data-location="bačko dušanovo" data-price="medium" style="background-image: url('https://media.istockphoto.com/id/172739813/photo/artificial-food.jpg?s=612x612&amp;w=0&amp;k=20&amp;c=3_jqHTtdV8r3W4Bm_5V0CEKXuU689WHsd9-3yhYRKGo=');">
+    <div class="card-content">
+        <h3>Bowling-Restaurant Krupara</h3>
+        <p><strong>Mesto:</strong> Bačko Dušanovo</p>
+        <p><strong>Jela:</strong> Roštilj, Ćevapi, Pljeskavica...</p>
+        <p><strong>Cena:</strong> <span class="price-emoji">Medium</span></p>
+    </div>
+</a>
+        
+            
+
+
+
+
+
+
+
+<a href="/restoran/gostiona-gurinovic-subotica/" class="restaurant-card" data-dishes="roštilj, ćevapi, pljeskavica, gulaš, sarma, supa, salate, pečena riba, jela od mesa, deserti" data-location="subotica" data-price="medium" style="background-image: url('https://media.istockphoto.com/id/172739813/photo/artificial-food.jpg?s=612x612&amp;w=0&amp;k=20&amp;c=3_jqHTtdV8r3W4Bm_5V0CEKXuU689WHsd9-3yhYRKGo=');">
+    <div class="card-content">
+        <h3>Gostiona Gurinović</h3>
+        <p><strong>Mesto:</strong> Subotica</p>
+        <p><strong>Jela:</strong> Roštilj, Ćevapi, Pljeskavica...</p>
+        <p><strong>Cena:</strong> <span class="price-emoji">Medium</span></p>
+    </div>
+</a>
+        
+            
+
+
+
+
+
+
+
+<a href="/restoran/gyros-way-subotica/" class="restaurant-card" data-dishes="giros, pileći, vegetarijanski, tortilja, pomfrit, salata, sosovi, piće" data-location="subotica" data-price="povremeno jeftino-srednje" style="background-image: url('https://lh3.googleusercontent.com/p/AF1QipNelX_9ItCWYIu4axgFSfcxDSZzzHANZDWIKHCe=s680-w680-h510-rw');">
+    <div class="card-content">
+        <h3>Gyros Way</h3>
+        <p><strong>Mesto:</strong> Subotica</p>
+        <p><strong>Jela:</strong> Giros, Pileći, Vegetarijanski...</p>
+        <p><strong>Cena:</strong> <span class="price-emoji">Povremeno jeftino-srednje</span></p>
+    </div>
+</a>
+        
+            
+
+
+
+
+
+
+
+<a href="/restoran/gostiona-petica-subotica/" class="restaurant-card" data-dishes="jela od mesa, ćevapi, pljeskavica, supa, sarma, gulaš, punjene paprike, salate, deserti, burek" data-location="subotica" data-price="medium" style="background-image: url('https://media.istockphoto.com/id/172739813/photo/artificial-food.jpg?s=612x612&amp;w=0&amp;k=20&amp;c=3_jqHTtdV8r3W4Bm_5V0CEKXuU689WHsd9-3yhYRKGo=');">
+    <div class="card-content">
+        <h3>Gostiona Petica</h3>
+        <p><strong>Mesto:</strong> Subotica</p>
+        <p><strong>Jela:</strong> Jela od mesa, Ćevapi, Pljeskavica...</p>
+        <p><strong>Cena:</strong> <span class="price-emoji">Medium</span></p>
+    </div>
+</a>
+        
+            
+
+
+
+
+
+
+
+<a href="/restoran/konoba-kujundzic-subotica/" class="restaurant-card" data-dishes="riblja čorba, pečena riba, jela od mesa, ćevapi, pljeskavica, gulaš, sarma, salate, supa, deserti" data-location="subotica" data-price="medium" style="background-image: url('https://media.istockphoto.com/id/172739813/photo/artificial-food.jpg?s=612x612&amp;w=0&amp;k=20&amp;c=3_jqHTtdV8r3W4Bm_5V0CEKXuU689WHsd9-3yhYRKGo=');">
+    <div class="card-content">
+        <h3>Konoba Kujundžić</h3>
+        <p><strong>Mesto:</strong> Subotica</p>
+        <p><strong>Jela:</strong> Riblja Čorba, Pečena Riba, Jela od mesa...</p>
+        <p><strong>Cena:</strong> <span class="price-emoji">Medium</span></p>
+    </div>
+</a>
+        
+            
+
+
+
+
+
+
+
+<a href="/restoran/konoba-tinel-subotica/" class="restaurant-card" data-dishes="riblja čorba, pečena riba, pasta, salate, ćevapi, pljeskavica, supa, deserti, jela od mesa, jagnjetina" data-location="subotica" data-price="medium" style="background-image: url('https://media.istockphoto.com/id/172739813/photo/artificial-food.jpg?s=612x612&amp;w=0&amp;k=20&amp;c=3_jqHTtdV8r3W4Bm_5V0CEKXuU689WHsd9-3yhYRKGo=');">
+    <div class="card-content">
+        <h3>Konoba Tinel</h3>
+        <p><strong>Mesto:</strong> Subotica</p>
+        <p><strong>Jela:</strong> Riblja Čorba, Pečena Riba, Pasta...</p>
+        <p><strong>Cena:</strong> <span class="price-emoji">Medium</span></p>
+    </div>
+</a>
+        
+            
+
+
+
+
+
+
+
+<a href="/restoran/restoran-bon-appetit-dudova-suma-subotica/" class="restaurant-card" data-dishes="jela od mesa, steak, pizza, salate, supa, deserti, ćevapi, pljeskavica, gulaš, punjene paprike" data-location="subotica" data-price="medium" style="background-image: url('https://media.istockphoto.com/id/172739813/photo/artificial-food.jpg?s=612x612&amp;w=0&amp;k=20&amp;c=3_jqHTtdV8r3W4Bm_5V0CEKXuU689WHsd9-3yhYRKGo=');">
+    <div class="card-content">
+        <h3>Restoran Bon Appetit (Dudova Šuma)</h3>
+        <p><strong>Mesto:</strong> Subotica</p>
+        <p><strong>Jela:</strong> Jela od mesa, Steak, Pizza...</p>
+        <p><strong>Cena:</strong> <span class="price-emoji">Medium</span></p>
+    </div>
+</a>
+        
+            
+
+
+
+
+
+
+
+<a href="/restoran/oliva-pizzeria-salad-bar-novi-sad/" class="restaurant-card" data-dishes="pizza, salate, pasta, roštilj, supa, deserti, ćevapi, gulaš, pečena riba, pljeskavica" data-location="novi sad" data-price="medium" style="background-image: url('https://media.istockphoto.com/id/172739813/photo/artificial-food.jpg?s=612x612&amp;w=0&amp;k=20&amp;c=3_jqHTtdV8r3W4Bm_5V0CEKXuU689WHsd9-3yhYRKGo=');">
+    <div class="card-content">
+        <h3>Oliva Pizzeria & Salad Bar</h3>
+        <p><strong>Mesto:</strong> Novi Sad</p>
+        <p><strong>Jela:</strong> Pizza, Salate, Pasta...</p>
+        <p><strong>Cena:</strong> <span class="price-emoji">Medium</span></p>
+    </div>
+</a>
+        
+            
+
+
+
+
+
+
+
+<a href="/restoran/nolita-pizzeria-novi-sad/" class="restaurant-card" data-dishes="pizza, pasta, salate, roštilj, supa, deserti, ćevapi, gulaš, pečena riba, pljeskavica" data-location="novi sad" data-price="medium" style="background-image: url('https://media.istockphoto.com/id/172739813/photo/artificial-food.jpg?s=612x612&amp;w=0&amp;k=20&amp;c=3_jqHTtdV8r3W4Bm_5V0CEKXuU689WHsd9-3yhYRKGo=');">
+    <div class="card-content">
+        <h3>Nolita Pizzeria</h3>
+        <p><strong>Mesto:</strong> Novi Sad</p>
+        <p><strong>Jela:</strong> Pizza, Pasta, Salate...</p>
+        <p><strong>Cena:</strong> <span class="price-emoji">Medium</span></p>
+    </div>
+</a>
+        
+            
+
+
+
+
+
+
+
+<a href="/restoran/petrus-gastro-bar-novi-sad/" class="restaurant-card" data-dishes="internacionalna, roštilj, jela od mesa, supa, salate, deserti, ćevapi, gulaš, pečena riba, pljeskavica" data-location="novi sad" data-price="medium" style="background-image: url('https://media.istockphoto.com/id/172739813/photo/artificial-food.jpg?s=612x612&amp;w=0&amp;k=20&amp;c=3_jqHTtdV8r3W4Bm_5V0CEKXuU689WHsd9-3yhYRKGo=');">
+    <div class="card-content">
+        <h3>Petrus Gastro Bar</h3>
+        <p><strong>Mesto:</strong> Novi Sad</p>
+        <p><strong>Jela:</strong> Internacionalna, Roštilj, Jela od mesa...</p>
+        <p><strong>Cena:</strong> <span class="price-emoji">Medium</span></p>
+    </div>
+</a>
+        
+            
+
+
+
+
+
+
+
+<a href="/restoran/toster-bar-novi-sad/" class="restaurant-card" data-dishes="burger, pljeskavica, vege varijanta, sendvič, prilog, meza, pivo" data-location="novi sad" data-price="low" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS9vpNRP5MGv639M2haXLl8Wh0BJyGWra9Dpg&amp;s');">
+    <div class="card-content">
+        <h3>Toster Bar</h3>
+        <p><strong>Mesto:</strong> Novi Sad</p>
+        <p><strong>Jela:</strong> Burger, pljeskavica, vege varijanta...</p>
+        <p><strong>Cena:</strong> <span class="price-emoji">Low</span></p>
+    </div>
+</a>
+        
+            
+
+
+
+
+
+
+
+<a href="/restoran/mon-ami-marine-club-novi-sad/" class="restaurant-card" data-dishes="riblja čorba, pečena riba, supa, salate, deserti, ćevapi, gulaš, jela od mesa, pljeskavica, pizza" data-location="novi sad" data-price="high" style="background-image: url('https://media.istockphoto.com/id/172739813/photo/artificial-food.jpg?s=612x612&amp;w=0&amp;k=20&amp;c=3_jqHTtdV8r3W4Bm_5V0CEKXuU689WHsd9-3yhYRKGo=');">
+    <div class="card-content">
+        <h3>Mon Ami Marine Club</h3>
+        <p><strong>Mesto:</strong> Novi Sad</p>
+        <p><strong>Jela:</strong> Riblja Čorba, Pečena Riba, Supa...</p>
+        <p><strong>Cena:</strong> <span class="price-emoji">High</span></p>
+    </div>
+</a>
+        
+            
+
+
+
+
+
+
+
+<a href="/restoran/herc-food-novi-sad/" class="restaurant-card" data-dishes="domaća kuhinja, sendviči, panirano jelo" data-location="novi sad" data-price="low" style="background-image: url('https://media.istockphoto.com/id/172739813/photo/artificial-food.jpg?s=612x612&amp;w=0&amp;k=20&amp;c=3_jqHTtdV8r3W4Bm_5V0CEKXuU689WHsd9-3yhYRKGo=');">
+    <div class="card-content">
+        <h3>Herc Food</h3>
+        <p><strong>Mesto:</strong> Novi Sad</p>
+        <p><strong>Jela:</strong> Domaća kuhinja, Sendviči, Panirano jelo...</p>
+        <p><strong>Cena:</strong> <span class="price-emoji">Low</span></p>
+    </div>
+</a>
+        
+            
+
+
+
+
+
+
+
+<a href="/restoran/remek-jelo-novi-sad/" class="restaurant-card" data-dishes="domaća kuhinja, kuvana jela" data-location="novi sad" data-price="medium" style="background-image: url('https://media.istockphoto.com/id/172739813/photo/artificial-food.jpg?s=612x612&amp;w=0&amp;k=20&amp;c=3_jqHTtdV8r3W4Bm_5V0CEKXuU689WHsd9-3yhYRKGo=');">
+    <div class="card-content">
+        <h3>Remek Jelo</h3>
+        <p><strong>Mesto:</strong> Novi Sad</p>
+        <p><strong>Jela:</strong> Domaća kuhinja, Kuvana jela...</p>
+        <p><strong>Cena:</strong> <span class="price-emoji">Medium</span></p>
+    </div>
+</a>
+        
+            
+
+
+
+
+
+
+
+<a href="/restoran/pikanterija-bar-novi-sad/" class="restaurant-card" data-dishes="roštilj, pohovana jela, kuvana jela, burgere" data-location="novi sad" data-price="medium" style="background-image: url('https://media.istockphoto.com/id/172739813/photo/artificial-food.jpg?s=612x612&amp;w=0&amp;k=20&amp;c=3_jqHTtdV8r3W4Bm_5V0CEKXuU689WHsd9-3yhYRKGo=');">
+    <div class="card-content">
+        <h3>Pikanterija Bar</h3>
+        <p><strong>Mesto:</strong> Novi Sad</p>
+        <p><strong>Jela:</strong> Roštilj, Pohovana jela, Kuvana jela...</p>
+        <p><strong>Cena:</strong> <span class="price-emoji">Medium</span></p>
+    </div>
+</a>
+        
+            
+
+
+
+
+
+
+
+<a href="/restoran/danka-bar-novi-sad/" class="restaurant-card" data-dishes="sendviči, pića" data-location="novi sad" data-price="low" style="background-image: url('https://media.istockphoto.com/id/172739813/photo/artificial-food.jpg?s=612x612&amp;w=0&amp;k=20&amp;c=3_jqHTtdV8r3W4Bm_5V0CEKXuU689WHsd9-3yhYRKGo=');">
+    <div class="card-content">
+        <h3>Danka Bar</h3>
+        <p><strong>Mesto:</strong> Novi Sad</p>
+        <p><strong>Jela:</strong> Sendviči, Pića...</p>
+        <p><strong>Cena:</strong> <span class="price-emoji">Low</span></p>
+    </div>
+</a>
+        
+            
+
+
+
+
+
+
+
+<a href="/restoran/the-nook-novi-sad/" class="restaurant-card" data-dishes="italijanska kuhinja, pizza, pasta" data-location="novi sad" data-price="medium" style="background-image: url('https://media.istockphoto.com/id/172739813/photo/artificial-food.jpg?s=612x612&amp;w=0&amp;k=20&amp;c=3_jqHTtdV8r3W4Bm_5V0CEKXuU689WHsd9-3yhYRKGo=');">
+    <div class="card-content">
+        <h3>The Nook</h3>
+        <p><strong>Mesto:</strong> Novi Sad</p>
+        <p><strong>Jela:</strong> Italijanska kuhinja, Pizza, Pasta...</p>
+        <p><strong>Cena:</strong> <span class="price-emoji">Medium</span></p>
+    </div>
+</a>
+        
+            
+
+
+
+
+
+
+
+<a href="/restoran/kombinat-food-novi-sad/" class="restaurant-card" data-dishes="internacionalna kuhinja, jela od mesa, roštilj" data-location="novi sad" data-price="medium" style="background-image: url('https://media.istockphoto.com/id/172739813/photo/artificial-food.jpg?s=612x612&amp;w=0&amp;k=20&amp;c=3_jqHTtdV8r3W4Bm_5V0CEKXuU689WHsd9-3yhYRKGo=');">
+    <div class="card-content">
+        <h3>Kombinat Food</h3>
+        <p><strong>Mesto:</strong> Novi Sad</p>
+        <p><strong>Jela:</strong> Internacionalna kuhinja, Jela od mesa, Roštilj...</p>
+        <p><strong>Cena:</strong> <span class="price-emoji">Medium</span></p>
+    </div>
+</a>
+        
+            
+
+
+
+
+
+
+
+<a href="/restoran/etno-restoran-fijaker-sombor/" class="restaurant-card" data-dishes="roštilj, ćevapi, pljeskavica, gulaš, sarma, supa, salate, pečena riba, jela od mesa, deserti, pizza" data-location="sombor" data-price="medium" style="background-image: url('https://media.istockphoto.com/id/172739813/photo/artificial-food.jpg?s=612x612&amp;w=0&amp;k=20&amp;c=3_jqHTtdV8r3W4Bm_5V0CEKXuU689WHsd9-3yhYRKGo=');">
+    <div class="card-content">
+        <h3>Etno Restoran Fijaker</h3>
+        <p><strong>Mesto:</strong> Sombor</p>
+        <p><strong>Jela:</strong> Roštilj, Ćevapi, Pljeskavica...</p>
+        <p><strong>Cena:</strong> <span class="price-emoji">Medium</span></p>
+    </div>
+</a>
+        
+            
+
+
+
+
+
+
+
+<a href="/restoran/restoran-stari-slon-sombor/" class="restaurant-card" data-dishes="roštilj, ćevapi, pljeskavica, riblja čorba, pečena riba, jela od mesa, supa, salate, gulaš, deserti" data-location="sombor" data-price="medium" style="background-image: url('https://media.istockphoto.com/id/172739813/photo/artificial-food.jpg?s=612x612&amp;w=0&amp;k=20&amp;c=3_jqHTtdV8r3W4Bm_5V0CEKXuU689WHsd9-3yhYRKGo=');">
+    <div class="card-content">
+        <h3>Restoran Stari Slon</h3>
+        <p><strong>Mesto:</strong> Sombor</p>
+        <p><strong>Jela:</strong> Roštilj, Ćevapi, Pljeskavica...</p>
+        <p><strong>Cena:</strong> <span class="price-emoji">Medium</span></p>
+    </div>
+</a>
+        
+            
+
+
+
+
+
+
+
+<a href="/restoran/riblja-carda-andric-sombor/" class="restaurant-card" data-dishes="riblja čorba, pečena riba, šaran, som, supa, salate, jela od mesa, roštilj, ćevapi, deserti" data-location="sombor" data-price="medium" style="background-image: url('https://media.istockphoto.com/id/172739813/photo/artificial-food.jpg?s=612x612&amp;w=0&amp;k=20&amp;c=3_jqHTtdV8r3W4Bm_5V0CEKXuU689WHsd9-3yhYRKGo=');">
+    <div class="card-content">
+        <h3>Riblja Čarda Andrić</h3>
+        <p><strong>Mesto:</strong> Sombor</p>
+        <p><strong>Jela:</strong> Riblja Čorba, Pečena Riba, Šaran...</p>
+        <p><strong>Cena:</strong> <span class="price-emoji">Medium</span></p>
+    </div>
+</a>
+        
+            
+
+
+
+
+
+
+
+<a href="/restoran/konoba-tera-sombor/" class="restaurant-card" data-dishes="pečena riba, riblja čorba, pasta, salate, jagnjetina, supa, deserti, jela od mesa, pizza, roštilj" data-location="sombor" data-price="medium" style="background-image: url('https://media.istockphoto.com/id/172739813/photo/artificial-food.jpg?s=612x612&amp;w=0&amp;k=20&amp;c=3_jqHTtdV8r3W4Bm_5V0CEKXuU689WHsd9-3yhYRKGo=');">
+    <div class="card-content">
+        <h3>Konoba Tera</h3>
+        <p><strong>Mesto:</strong> Sombor</p>
+        <p><strong>Jela:</strong> Pečena Riba, Riblja Čorba, Pasta...</p>
+        <p><strong>Cena:</strong> <span class="price-emoji">Medium</span></p>
+    </div>
+</a>
+        
+            
+
+
+
+
+
+
+
+<a href="/restoran/zlatna-kruna-carda-apatin/" class="restaurant-card" data-dishes="riblja čorba, pečena riba, šaran, som, supa, salate, roštilj, ćevapi, pljeskavica, deserti" data-location="apatin" data-price="medium" style="background-image: url('https://media.istockphoto.com/id/172739813/photo/artificial-food.jpg?s=612x612&amp;w=0&amp;k=20&amp;c=3_jqHTtdV8r3W4Bm_5V0CEKXuU689WHsd9-3yhYRKGo=');">
+    <div class="card-content">
+        <h3>Zlatna Kruna Carda</h3>
+        <p><strong>Mesto:</strong> Apatin</p>
+        <p><strong>Jela:</strong> Riblja Čorba, Pečena Riba, Šaran...</p>
+        <p><strong>Cena:</strong> <span class="price-emoji">Medium</span></p>
+    </div>
+</a>
+        
+            
+
+
+
+
+
+
+
+<a href="/restoran/restoran-marina-apatin/" class="restaurant-card" data-dishes="pečena riba, riblja čorba, šaran na rašljama, supa, salate, jela od mesa, roštilj, pizza, deserti, pasta" data-location="apatin" data-price="medium" style="background-image: url('https://media.istockphoto.com/id/172739813/photo/artificial-food.jpg?s=612x612&amp;w=0&amp;k=20&amp;c=3_jqHTtdV8r3W4Bm_5V0CEKXuU689WHsd9-3yhYRKGo=');">
+    <div class="card-content">
+        <h3>Restoran Marina</h3>
+        <p><strong>Mesto:</strong> Apatin</p>
+        <p><strong>Jela:</strong> Pečena Riba, Riblja Čorba, Šaran na rašljama...</p>
+        <p><strong>Cena:</strong> <span class="price-emoji">Medium</span></p>
+    </div>
+</a>
+        
+            
+
+
+
+
+
+
+
+<a href="/restoran/plava-ruza-apatin/" class="restaurant-card" data-dishes="steak, jela od mesa, pasta, salate, supa, deserti, riblja čorba, internacionalna kuhinja, roštilj, pizza" data-location="apatin" data-price="high" style="background-image: url('https://media.istockphoto.com/id/172739813/photo/artificial-food.jpg?s=612x612&amp;w=0&amp;k=20&amp;c=3_jqHTtdV8r3W4Bm_5V0CEKXuU689WHsd9-3yhYRKGo=');">
+    <div class="card-content">
+        <h3>Plava Ruža</h3>
+        <p><strong>Mesto:</strong> Apatin</p>
+        <p><strong>Jela:</strong> Steak, Jela od mesa, Pasta...</p>
+        <p><strong>Cena:</strong> <span class="price-emoji">High</span></p>
+    </div>
+</a>
+        
+            
+
+
+
+
+
+
+
+<a href="/restoran/garden-house-apatin-apatin/" class="restaurant-card" data-dishes="roštilj, ćevapi, pljeskavica, supa, salate, deserti, jela od mesa, pizza, pasta, pića" data-location="apatin" data-price="medium" style="background-image: url('https://media.istockphoto.com/id/172739813/photo/artificial-food.jpg?s=612x612&amp;w=0&amp;k=20&amp;c=3_jqHTtdV8r3W4Bm_5V0CEKXuU689WHsd9-3yhYRKGo=');">
+    <div class="card-content">
+        <h3>Garden House Apatin</h3>
+        <p><strong>Mesto:</strong> Apatin</p>
+        <p><strong>Jela:</strong> Roštilj, Ćevapi, Pljeskavica...</p>
+        <p><strong>Cena:</strong> <span class="price-emoji">Medium</span></p>
+    </div>
+</a>
+        
+            
+
+
+
+
+
+
+
+<a href="/restoran/restoran-agape-kula/" class="restaurant-card" data-dishes="jela od mesa, roštilj, ćevapi, pljeskavica, supa, salate, gulaš, deserti, pizza, sarma" data-location="kula" data-price="medium" style="background-image: url('https://media.istockphoto.com/id/172739813/photo/artificial-food.jpg?s=612x612&amp;w=0&amp;k=20&amp;c=3_jqHTtdV8r3W4Bm_5V0CEKXuU689WHsd9-3yhYRKGo=');">
+    <div class="card-content">
+        <h3>Restoran Agape</h3>
+        <p><strong>Mesto:</strong> Kula</p>
+        <p><strong>Jela:</strong> Jela od mesa, Roštilj, Ćevapi...</p>
+        <p><strong>Cena:</strong> <span class="price-emoji">Medium</span></p>
+    </div>
+</a>
+        
+            
+
+
+
+
+
+
+
+<a href="/restoran/restoran-cuprija-kula/" class="restaurant-card" data-dishes="domaća kuhinja, ćevapi, pljeskavica, gulaš, sarma, supa, salate, jela od mesa, deserti, punjene paprike" data-location="kula" data-price="low" style="background-image: url('https://media.istockphoto.com/id/172739813/photo/artificial-food.jpg?s=612x612&amp;w=0&amp;k=20&amp;c=3_jqHTtdV8r3W4Bm_5V0CEKXuU689WHsd9-3yhYRKGo=');">
+    <div class="card-content">
+        <h3>Restoran Ćuprija</h3>
+        <p><strong>Mesto:</strong> Kula</p>
+        <p><strong>Jela:</strong> Domaća kuhinja, Ćevapi, Pljeskavica...</p>
+        <p><strong>Cena:</strong> <span class="price-emoji">Low</span></p>
+    </div>
+</a>
+        
+            
+
+
+
+
+
+
+
+<a href="/restoran/galija-restoran-i-decija-igraonica-sivac/" class="restaurant-card" data-dishes="pljeskavica, roštilj, ćevapi, salate, jela od mesa, pizza, deserti" data-location="sivac" data-price="medium" style="background-image: url('https://media.istockphoto.com/id/172739813/photo/artificial-food.jpg?s=612x612&amp;w=0&amp;k=20&amp;c=3_jqHTtdV8r3W4Bm_5V0CEKXuU689WHsd9-3yhYRKGo=');">
+    <div class="card-content">
+        <h3>Galija restoran i dečija igraonica</h3>
+        <p><strong>Mesto:</strong> Sivac</p>
+        <p><strong>Jela:</strong> Pljeskavica, Roštilj, Ćevapi...</p>
+        <p><strong>Cena:</strong> <span class="price-emoji">Medium</span></p>
+    </div>
+</a>
+        
+            
+
+
+
+
+
+
+
+<a href="/restoran/pitac-cafe-food-bar-kula/" class="restaurant-card" data-dishes="pizza, pasta, sendviči, salate, supa, deserti, pića, roštilj, ćevapi, limunada" data-location="kula" data-price="low" style="background-image: url('https://media.istockphoto.com/id/172739813/photo/artificial-food.jpg?s=612x612&amp;w=0&amp;k=20&amp;c=3_jqHTtdV8r3W4Bm_5V0CEKXuU689WHsd9-3yhYRKGo=');">
+    <div class="card-content">
+        <h3>Pitac Cafe & Food Bar</h3>
+        <p><strong>Mesto:</strong> Kula</p>
+        <p><strong>Jela:</strong> Pizza, Pasta, Sendviči...</p>
+        <p><strong>Cena:</strong> <span class="price-emoji">Low</span></p>
+    </div>
+</a>
+        
+    </div>
+    <div class="scroll-buttons">
+        <button class="scroll-button" onclick="scrollRestaurantsLeft()" id="scrollLeft">← Prethodno</button>
+        <button class="scroll-button" onclick="scrollRight()" id="scrollRight">Sledeće →</button>
+    </div>
+</section>
+
+<div id="imageModal">
+    <div id="modalContent">
+        <button class="modal-close">✖</button>
+        <img id="modalImage">
+        <div class="modal-nav">
+            <button class="modal-nav-button" id="prevImage">← Prethodna</button>
+            <button class="modal-nav-button" id="nextImage">Sledeća →</button>
+        </div>
+    </div>
+</div>
+
+<style>
+    .loader {
+        border: 4px solid #f3f3f3;
+        border-top: 4px solid #A30000;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        animation: spin 1s linear infinite;
+    }
+    @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+    }
+</style>
+
+<script type="application/json" id="dishTabsData">
+    ["Ćevapi","Gulaš","Sarma","Riblja Čorba","Pečena Riba","Pizza","Jagnjetina","Burek","Pljeskavica","Punjene Paprike","Supa","Karađorđeva Šnicla","Sendviči","Salate"]
+</script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+    // Cache DOM elements
+    const searchDishInput = document.getElementById('searchDish');
+    const filterLocationInput = document.getElementById('filterLocation');
+    const filterPriceSelect = document.getElementById('filterPrice');
+    const dishSuggestions = document.getElementById('dishSuggestions');
+    const locationSuggestions = document.getElementById('locationSuggestions');
+    const resultsContainer = document.getElementById('results-static');
+    const dishTabs = document.getElementById('dishTabs');
+    const loading = document.getElementById('loading');
+    const scrollLeftBtn = document.getElementById('scrollLeft');
+    const scrollRightBtn = document.getElementById('scrollRight');
+
+    // Get dish tabs data with error handling
+    let dishTabsData = [];
+    try {
+        const rawData = document.getElementById('dishTabsData').textContent;
+        if (rawData) {
+            dishTabsData = JSON.parse(rawData);
+            if (!Array.isArray(dishTabsData)) {
+                console.error('dishTabsData is not an array:', dishTabsData);
+                dishTabsData = [];
+            }
+        } else {
+            console.warn('dishTabsData is empty');
+        }
+    } catch (e) {
+        console.error('Error parsing dishTabsData:', e);
+        dishTabsData = [];
+    }
+
+    // Store original restaurant cards
+    const originalRestaurants = Array.from(document.querySelectorAll('.restaurant-card'));
+
+    // Pagination state
+    let currentPage = 0;
+    const itemsPerPage = window.innerWidth <= 768 ? 5 : 10;
+
+    // Price to emoji function
+    window.priceToEmoji = function(price) {
+        switch(price.toLowerCase()) {
+            case 'low': return '💰';
+            case 'medium': return '💰💰';
+            case 'high': return '💰💰💰';
+            default: return '';
+        }
+    };
+
+    function clearFilters() {
+        searchDishInput.value = '';
+        filterLocationInput.value = '';
+        filterPriceSelect.value = '';
+        dishTabs.querySelectorAll('.dish-tab').forEach(tab => tab.classList.remove('active'));
+        localStorage.removeItem('filterDish');
+        localStorage.removeItem('filterLocation');
+        localStorage.removeItem('filterPrice');
+        applyFilters();
+    }
+
+    // Function to normalize text for filtering (remove diacritics and convert to lowercase)
+    function normalizeText(text) {
+        if (!text) return '';
+        return text
+            .toLowerCase()
+            .replace(/[žž]/g, 'z')
+            .replace(/[šš]/g, 's')
+            .replace(/[ććčč]/g, 'c')
+            .replace(/[đđ]/g, 'dj')
+            .replace(/[^a-z0-9\s]/g, '');
+    }
+
+    // Function to get all unique dishes and locations from restaurant data
+    function getFilterOptions() {
+        const restaurants = Array.from(document.querySelectorAll('.restaurant-card'));
+        const dishes = new Set();
+        const locations = new Set();
+
+        restaurants.forEach(restaurant => {
+            const dishList = restaurant.getAttribute('data-dishes')?.split(', ') || [];
+            dishList.forEach(dish => dishes.add(normalizeText(dish)));
+            locations.add(normalizeText(restaurant.getAttribute('data-location')));
+        });
+
+        return { dishes: Array.from(dishes), locations: Array.from(locations) };
+    }
+
+    // Function to show suggestions for dishes or locations
+    function showSuggestions(input, suggestionsContainer, items) {
+        const value = normalizeText(input.value);
+        suggestionsContainer.innerHTML = '';
+
+        if (value.length > 0) {
+            const filteredItems = items.filter(item => item.includes(value));
+            filteredItems.forEach(item => {
+                const suggestion = document.createElement('div');
+                suggestion.textContent = item;
+                suggestion.classList.add('suggestion');
+                suggestion.addEventListener('click', () => {
+                    input.value = item;
+                    suggestionsContainer.innerHTML = '';
+                    saveFilterState();
+                    applyFilters();
+                });
+                suggestionsContainer.appendChild(suggestion);
+            });
+            suggestionsContainer.style.display = filteredItems.length > 0 ? 'block' : 'none';
+        } else {
+            suggestionsContainer.style.display = 'none';
+        }
+    }
+
+    // Function to save filter state to localStorage
+    function saveFilterState() {
+        localStorage.setItem('filterDish', searchDishInput.value);
+        localStorage.setItem('filterLocation', filterLocationInput.value);
+        localStorage.setItem('filterPrice', filterPriceSelect.value);
+    }
+
+    // Function to restore filter state from localStorage
+    function restoreFilterState() {
+        const savedDish = localStorage.getItem('filterDish') || '';
+        const savedLocation = localStorage.getItem('filterLocation') || '';
+        const savedPrice = localStorage.getItem('filterPrice') || '';
+
+        searchDishInput.value = savedDish;
+        filterLocationInput.value = savedLocation;
+        filterPriceSelect.value = savedPrice;
+
+        // Update active dish tab if savedDish matches a tab
+        if (savedDish) {
+            const selectedTab = Array.from(dishTabs.querySelectorAll('.dish-tab')).find(
+                tab => normalizeText(tab.textContent) === normalizeText(savedDish)
+            );
+            if (selectedTab) {
+                dishTabs.querySelectorAll('.dish-tab').forEach(tab => tab.classList.remove('active'));
+                selectedTab.classList.add('active');
+            }
+        }
+    }
+
+    // Function to get filtered restaurants based on current filter criteria
+    function getFilteredRestaurants() {
+        const dishFilter = normalizeText(searchDishInput.value);
+        const locationFilter = normalizeText(filterLocationInput.value);
+        const priceFilter = filterPriceSelect.value.toLowerCase();
+
+        return originalRestaurants.filter(restaurant => {
+            const dishes = normalizeText(restaurant.getAttribute('data-dishes'));
+            const location = normalizeText(restaurant.getAttribute('data-location'));
+            const price = restaurant.getAttribute('data-price')?.toLowerCase() || '';
+
+            let matchesDish = true;
+            let matchesLocation = true;
+            let matchesPrice = true;
+
+            if (dishFilter) {
+                matchesDish = dishes.includes(dishFilter);
+            }
+            if (locationFilter) {
+                matchesLocation = location.includes(locationFilter);
+            }
+            if (priceFilter) {
+                matchesPrice = price === priceFilter;
+            }
+
+            return matchesDish && matchesLocation && matchesPrice;
+        });
+    }
+
+    // Function to apply filters and update pagination
+    function applyFilters() {
+        const visibleRestaurants = getFilteredRestaurants();
+
+        // Restore original restaurant cards to the DOM
+        resultsContainer.innerHTML = '';
+        originalRestaurants.forEach(restaurant => {
+            // Update price display to use emojis
+            const priceElement = restaurant.querySelector('.price-emoji');
+            if (priceElement) {
+                const price = restaurant.getAttribute('data-price')?.toLowerCase() || '';
+                priceElement.textContent = priceToEmoji(price);
+            }
+            resultsContainer.appendChild(restaurant);
+        });
+
+        // Show loading spinner
+        loading.style.display = 'block';
+        resultsContainer.style.opacity = '0.5';
+
+        setTimeout(() => {
+            // Reset to first page on new filter
+            currentPage = 0;
+            updateVisibleRestaurants(visibleRestaurants);
+
+            // Hide loading spinner
+            loading.style.display = 'none';
+            resultsContainer.style.opacity = '1';
+
+            // Update scroll buttons visibility
+            updateScrollButtons(visibleRestaurants);
+
+            // Save filter state
+            saveFilterState();
+        }, 300);
+    }
+
+    // Function to update visible restaurants based on current page
+    function updateVisibleRestaurants(visibleRestaurants) {
+        const start = currentPage * itemsPerPage;
+        const end = start + itemsPerPage;
+
+        // Hide all restaurants first
+        originalRestaurants.forEach(restaurant => {
+            restaurant.style.display = 'none';
+        });
+
+        // Show only the restaurants for the current page
+        visibleRestaurants.forEach((restaurant, index) => {
+            restaurant.style.display = (index >= start && index < end) ? 'block' : 'none';
+            // Update price display for visible restaurants
+            const priceElement = restaurant.querySelector('.price-emoji');
+            if (priceElement) {
+                const price = restaurant.getAttribute('data-price')?.toLowerCase() || '';
+                priceElement.textContent = priceToEmoji(price);
+            }
+        });
+
+        // Show "No items found" message if no restaurants are visible
+        if (visibleRestaurants.length === 0) {
+            resultsContainer.innerHTML = '<p style="text-align: center; font-size: 1.2em;">Nema pronađenih stavki.</p>';
+        } else if (resultsContainer.innerHTML.includes('Nema pronađenih stavki')) {
+            // Clear "No items found" message and restore restaurants
+            resultsContainer.innerHTML = '';
+            originalRestaurants.forEach(restaurant => {
+                // Update price display to use emojis
+                const priceElement = restaurant.querySelector('.price-emoji');
+                if (priceElement) {
+                    const price = restaurant.getAttribute('data-price')?.toLowerCase() || '';
+                    priceElement.textContent = priceToEmoji(price);
+                }
+                resultsContainer.appendChild(restaurant);
+            });
+            visibleRestaurants.forEach((restaurant, index) => {
+                restaurant.style.display = (index >= start && index < end) ? 'block' : 'none';
+                // Update price display for visible restaurants
+                const priceElement = restaurant.querySelector('.price-emoji');
+                if (priceElement) {
+                    const price = restaurant.getAttribute('data-price')?.toLowerCase() || '';
+                    priceElement.textContent = priceToEmoji(price);
+                }
+            });
+        }
+    }
+
+    // Function to handle dish tab selection
+    window.selectDishTab = function(dish) {
+        dishTabs.querySelectorAll('.dish-tab').forEach(tab => {
+            tab.classList.remove('active');
+        });
+
+        const selectedTab = Array.from(dishTabs.querySelectorAll('.dish-tab')).find(
+            tab => normalizeText(tab.textContent) === normalizeText(dish)
+        );
+        if (selectedTab) {
+            selectedTab.classList.add('active');
+            searchDishInput.value = dish; // Set the dish tab value in the search input
+        } else {
+            searchDishInput.value = ''; // Clear input if no tab is selected
+        }
+
+        dishSuggestions.style.display = 'none';
+        saveFilterState();
+        applyFilters();
+    };
+
+    // Function to update scroll buttons visibility
+    function updateScrollButtons(visibleRestaurants) {
+        const totalVisible = visibleRestaurants.length;
+        scrollLeftBtn.style.display = currentPage > 0 ? 'block' : 'none';
+        scrollRightBtn.style.display = (currentPage + 1) * itemsPerPage < totalVisible ? 'block' : 'none';
+    }
+
+    // Scroll functions
+    window.scrollRestaurantsLeft = function() {
+        if (currentPage > 0) {
+            currentPage--;
+            const visibleRestaurants = getFilteredRestaurants();
+            updateVisibleRestaurants(visibleRestaurants);
+            updateScrollButtons(visibleRestaurants);
+        }
+    };
+
+    window.scrollRight = function() {
+        const visibleRestaurants = getFilteredRestaurants();
+        if ((currentPage + 1) * itemsPerPage < visibleRestaurants.length) {
+            currentPage++;
+            updateVisibleRestaurants(visibleRestaurants);
+            updateScrollButtons(visibleRestaurants);
+        }
+    };
+
+    // Function to clear filters
+        window.clearFilters = function() {
+            // Clear input fields and select
+            searchDishInput.value = '';
+            filterLocationInput.value = '';
+            filterPriceSelect.value = '';
+            dishTabs.querySelectorAll('.dish-tab').forEach(tab => tab.classList.remove('active'));
+
+            // Clear localStorage
+            localStorage.removeItem('filterDish');
+            localStorage.removeItem('filterLocation');
+            localStorage.removeItem('filterPrice');
+
+            // Hide suggestions
+            dishSuggestions.style.display = 'none';
+            locationSuggestions.style.display = 'none';
+
+            // Reset and re-render all restaurants
+            currentPage = 0;
+            const visibleRestaurants = originalRestaurants; // Show all restaurants
+            updateVisibleRestaurants(visibleRestaurants);
+            updateScrollButtons(visibleRestaurants);
+
+            // Trigger applyFilters to ensure UI updates
+            applyFilters();
+        };
+
+    // Event listeners for input fields
+    searchDishInput.addEventListener('input', () => {
+        const { dishes } = getFilterOptions();
+        showSuggestions(searchDishInput, dishSuggestions, dishes);
+        // Clear active dish tab when user types in searchDish input
+        dishTabs.querySelectorAll('.dish-tab').forEach(tab => tab.classList.remove('active'));
+        saveFilterState();
+        applyFilters();
+    });
+
+    filterLocationInput.addEventListener('input', () => {
+        const { locations } = getFilterOptions();
+        showSuggestions(filterLocationInput, locationSuggestions, locations);
+        saveFilterState();
+        applyFilters();
+    });
+
+    filterPriceSelect.addEventListener('change', () => {
+        saveFilterState();
+        applyFilters();
+    });
+
+    // Event listener for clicking outside suggestions to hide them
+    document.addEventListener('click', (e) => {
+        if (!searchDishInput.contains(e.target) && !dishSuggestions.contains(e.target) && !dishTabs.contains(e.target)) {
+            dishSuggestions.style.display = 'none';
+        }
+        if (!filterLocationInput.contains(e.target) && !locationSuggestions.contains(e.target)) {
+            locationSuggestions.style.display = 'none';
+        }
+    });
+
+    // Handle window resize to update items per page
+    window.addEventListener('resize', () => {
+        const newItemsPerPage = window.innerWidth <= 768 ? 5 : 10;
+        if (newItemsPerPage !== itemsPerPage) {
+            currentPage = 0;
+            applyFilters();
+        }
+    });
+
+    // Restore filter state and initialize
+    restoreFilterState();
+    applyFilters();
+
+    // Add CSS for suggestions and restaurant cards
+    const style = document.createElement('style');
+    style.textContent = `
+        #dishSuggestions, #locationSuggestions {
+            position: absolute;
+            background: white;
+            border: 1px solid #ccc;
+            max-height: 150px;
+            overflow-y: auto;
+            z-index: 1000;
+            width: 100%;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .suggestion {
+            padding: 8px;
+            cursor: pointer;
+        }
+        .suggestion:hover {
+            background: #f0f0f0;
+        }
+        .dish-tab.active {
+            background: #A30000;
+            color: white;
+        }
+        #results-static {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            max-height: 600px; /* Approximate height for 2 rows on desktop */
+            overflow: hidden;
+        }
+        .restaurant-card {
+            flex: 0 0 calc(20% - 16px); /* 5 cards per row on desktop */
+            box-sizing: border-box;
+            max-width: 350px;
+            margin-bottom: 20px; /* Space for 2 rows */
+        }
+        @media (max-width: 768px) {
+            .restaurant-card {
+                flex: 0 0 calc(100% - 16px); /* 1 card per row on mobile */
+                max-width: 100%;
+                margin-bottom: 20px; /* Space for 5 rows */
+            }
+            #results-static {
+                max-height: none; /* Allow full height for mobile */
+            }
+            
+        }
+    `;
+    document.head.appendChild(style);
+
+    // Image modal functions
+    let currentImageIndex = 0;
+    let currentImages = [];
+
+    window.openImageModal = function(index) {
+        if (currentImages.length === 0) return;
+        currentImageIndex = index;
+        const modalImage = document.getElementById('modalImage');
+        modalImage.src = currentImages[index];
+        modalImage.alt = 'Restaurant Image';
+        document.getElementById('imageModal').style.display = 'flex';
+        document.getElementById('prevImage').disabled = index === 0;
+        document.getElementById('nextImage').disabled = index === currentImages.length - 1;
+    };
+
+    window.closeImageModal = function() {
+        document.getElementById('imageModal').style.display = 'none';
+        currentImageIndex = 0;
+    };
+
+    window.showPrevImage = function() {
+        if (currentImageIndex > 0) {
+            currentImageIndex--;
+            document.getElementById('modalImage').src = currentImages[currentImageIndex];
+            document.getElementById('prevImage').disabled = currentImageIndex === 0;
+            document.getElementById('nextImage').disabled = false;
+        }
+    };
+
+    window.showNextImage = function() {
+        if (currentImageIndex < currentImages.length - 1) {
+            currentImageIndex++;
+            document.getElementById('modalImage').src = currentImages[currentImageIndex];
+            document.getElementById('prevImage').disabled = false;
+            document.getElementById('nextImage').disabled = currentImageIndex === currentImages.length - 1;
+        }
+    };
+});
+</script>
+    </main>
+    <hr>
+    <section id="mission">
+        <div class="mission-content">
+            <h2>Naša Misija</h2>
+            <p><b>Gde Jesti</b> (il što bi dođoši rekli "đe jest!?") je platforma posvećena promociji domaće kulinarske tradicije, povezivanju ljubitelja hrane sa autentičnim kafanama i restoranima, i olakšavanju pronalaženja savršenog mesta za uživanje u domaćim specijalitetima.</p>
+            <h3>Kako Pomažemo Korisnicima</h3>
+            <p>Pronađite restorane u željenom gradu ili selu, filtrirajte po omiljenim jelima poput ćevapa ili sarme, i odaberite prema budžetu. Sa detaljnim informacijama, slikama i linkom za Google Maps, lako planirajte svoj sledeći obrok!</p>
+            <h3>Povezivanje Poslova sa Mušterijama</h3>
+            <p>Pomažemo restoranima i kafanama da dosegnu širu publiku, ističući njihove meni, lokaciju i jedinstvenu atmosferu. <a href="mailto:notoolsnocraft@gmail.com">Kontaktirajte nas</a> da biste dodali vaš restoran na platformu i privukli nove goste!</p>
+        </div>
+    </section>
+    <footer>
+        © 2025 <a href="https://www.linkedin.com/in/petar-skrbic/" target="_blank">Petar Škrbić</a>. Sva prava zadržana.
+    </footer>
+</body>
+</html>

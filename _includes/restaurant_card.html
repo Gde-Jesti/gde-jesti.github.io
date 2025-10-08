@@ -1,0 +1,16 @@
+{% assign imageUrl = restaurant['Image URLs'][0] | default: 'https://media.istockphoto.com/id/172739813/photo/artificial-food.jpg?s=612x612&w=0&k=20&c=3_jqHTtdV8r3W4Bm_5V0CEKXuU689WHsd9-3yhYRKGo=' | escape %}
+
+{% comment %} Normalize Serbian characters before slugify {% endcomment %}
+{% assign normalizedName = restaurant.Name | replace: 'ž', 'z' | replace: 'Ž', 'z' | replace: 'š', 's' | replace: 'Š', 's' | replace: 'ć', 'c' | replace: 'Ć', 'c' | replace: 'č', 'c' | replace: 'Č', 'c' | replace: 'đ', 'dj' | replace: 'Đ', 'dj' | replace: '[^\w\s-]', '' | strip %}
+{% assign normalizedLocation = restaurant.Location | replace: 'ž', 'z' | replace: 'Ž', 'z' | replace: 'š', 's' | replace: 'Š', 's' | replace: 'ć', 'c' | replace: 'Ć', 'c' | replace: 'č', 'c' | replace: 'Č', 'c' | replace: 'đ', 'dj' | replace: 'Đ', 'dj' | replace: '[^\w\s-]', '' | strip %}
+
+{% assign slug = normalizedName | slugify | append: '-' | append: normalizedLocation | slugify %}
+
+<a href="/restoran/{{ slug }}/" class="restaurant-card" data-dishes="{{ restaurant.Dishes | downcase }}" data-location="{{ restaurant.Location | downcase }}" data-price="{{ restaurant['Price Range'] | downcase }}" style="background-image: url('{{ imageUrl }}');">
+    <div class="card-content">
+        <h3>{{ restaurant.Name }}</h3>
+        <p><strong>Mesto:</strong> {{ restaurant.Location }}</p>
+        <p><strong>Jela:</strong> {{ restaurant.Dishes | split: ', ' | slice: 0, 3 | join: ', ' }}...</p>
+        <p><strong>Cena:</strong> <span class="price-emoji">{{ restaurant['Price Range'] }}</span></p>
+    </div>
+</a>

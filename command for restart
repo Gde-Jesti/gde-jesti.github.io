@@ -1,0 +1,4 @@
+chcp 65001
+Remove-Item -Path "_site" -Recurse -Force
+.\generate_pages.ps1
+bundle exec jekyll serve

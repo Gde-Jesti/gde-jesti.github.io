@@ -1,0 +1,445 @@
+---
+layout: default
+title: Gde Jesti - Katalog Kafana i Restorana
+---
+<header>
+      <h1><a href="/" style="color: white; text-decoration: none; font-family: 'Arial', sans-serif;">Gde Jesti</a></h1>
+      <p>Pronađi najbolje kafiće i restorane po svom ukusu!</p>
+    </header>
+
+<section id="filters">
+    <div style="position: relative;">
+        <input type="text" id="searchDish" placeholder="Pretraži po jelu (npr. ćevapi)">
+        <div id="dishSuggestions"></div>
+    </div>
+    <div style="position: relative;">
+        <input type="text" id="filterLocation" placeholder="Unesite mesto (npr. Novi Sad)">
+        <div id="locationSuggestions"></div>
+    </div>
+    <select id="filterPrice">
+        <option value="">Sve cene</option>
+        <option value="low">💰 Jeftino</option>
+        <option value="medium">💰💰 Srednje</option>
+        <option value="high">💰💰💰 Skupo</option>
+    </select>
+    <button onclick="applyFilters()">🔍</button>
+    <div id="dishTabs">
+        {% for dish in site.data.dishTabsList %}
+            <button class="dish-tab" onclick="selectDishTab('{{ dish | escape }}')">{{ dish }}</button>
+        {% endfor %}
+    </div>
+</section>
+
+<section id="catalog">
+    <div id="loading" style="display: none;"><div class="loader"></div></div>
+    <div id="results-static">
+        {% for restaurant in site.data.restaurants %}
+            {% include restaurant_card.html restaurant=restaurant %}
+        {% endfor %}
+    </div>
+    <div class="scroll-buttons">
+        <button class="scroll-button" onclick="scrollRestaurantsLeft()" id="scrollLeft">← Prethodno</button>
+        <button class="scroll-button" onclick="scrollRight()" id="scrollRight">Sledeće →</button>
+    </div>
+</section>
+
+<div id="imageModal">
+    <div id="modalContent">
+        <button class="modal-close">✖</button>
+        <img id="modalImage">
+        <div class="modal-nav">
+            <button class="modal-nav-button" id="prevImage">← Prethodna</button>
+            <button class="modal-nav-button" id="nextImage">Sledeća →</button>
+        </div>
+    </div>
+</div>
+
+<style>
+    .loader {
+        border: 4px solid #f3f3f3;
+        border-top: 4px solid #A30000;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        animation: spin 1s linear infinite;
+    }
+    @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+    }
+</style>
+
+<script type="application/json" id="dishTabsData">
+    {{ site.data.dishTabsList | jsonify }}
+</script>
+
+<script>
+    let isInitialLoad = true;
+    let currentPage = 0;
+    let allCards = [];
+    let loadingTimeout = null;
+
+    // Parse dish tabs data
+    const dishTabsData = document.getElementById('dishTabsData').textContent;
+    const dishTabsList = JSON.parse(dishTabsData);
+
+    // Extract unique dishes from restaurant cards
+    const dishesList = [...new Set(
+        Array.from(document.querySelectorAll('.restaurant-card'))
+            .flatMap(card => card.dataset.dishes.split(', '))
+            .map(dish => dish.trim())
+    )].sort();
+
+    // Normalize Serbian characters for comparison
+    function normalizeSerbian(text) {
+        const serbianMap = {
+            'ć': 'c', 'č': 'c', 'đ': 'd', 'š': 's', 'ž': 'z',
+            'Ć': 'C', 'Č': 'C', 'Đ': 'D', 'Š': 'S', 'Ž': 'Z'
+        };
+        return text
+            .toLowerCase()
+            .replace(/[ćčđšž]/g, char => serbianMap[char] || char);
+    }
+
+    // Price to emoji function
+    function priceToEmoji(price) {
+        switch(price.toLowerCase()) {
+            case 'low': return '💰';
+            case 'medium': return '💰💰';
+            case 'high': return '💰💰💰';
+            default: return '';
+        }
+    }
+
+    window.onload = () => {
+        allCards = Array.from(document.querySelectorAll('.restaurant-card'));
+        const modal = document.getElementById('imageModal');
+        const closeModal = document.querySelector('.modal-close');
+        const prevButton = document.getElementById('prevImage');
+        const nextButton = document.getElementById('nextImage');
+
+        modal.addEventListener('click', function(event) {
+            if (event.target === modal) {
+                closeImageModal();
+            }
+        });
+
+        closeModal.addEventListener('click', closeImageModal);
+        prevButton.addEventListener('click', showPrevImage);
+        nextButton.addEventListener('click', showNextImage);
+
+        document.getElementById('filterLocation').addEventListener('keyup', showSuggestions);
+        document.getElementById('searchDish').addEventListener('keyup', showDishSuggestions);
+
+        setTimeout(() => {
+            const dishTabs = document.getElementById('dishTabs');
+            dishTabs.scrollLeft = 0;
+        }, 100);
+
+        // Check if this is the first visit or restore last state
+        if (!localStorage.getItem('visitedBefore')) {
+            if (confirm('Želite li da koristite geolokaciju za automatski postavljanje mesta?')) {
+                getUserLocation();
+            } else {
+                displayRestaurants();
+            }
+            localStorage.setItem('visitedBefore', 'true');
+        } else {
+            // Restore last location and filters
+            const lastLocation = localStorage.getItem('lastLocation');
+            const lastDish = localStorage.getItem('lastDish');
+            const lastPrice = localStorage.getItem('lastPrice');
+            if (lastLocation) document.getElementById('filterLocation').value = lastLocation;
+            if (lastDish) document.getElementById('searchDish').value = lastDish;
+            if (lastPrice) document.getElementById('filterPrice').value = lastPrice;
+            applyFilters();
+        }
+        isInitialLoad = false;
+    };
+
+    document.addEventListener('DOMContentLoaded', () => {
+        const dishTabs = document.getElementById('dishTabs');
+        dishTabs.scrollLeft = 0;
+        document.querySelectorAll('.price-emoji').forEach(span => {
+            const price = span.textContent;
+            span.textContent = priceToEmoji(price);
+        });
+    });
+
+    function selectDishTab(dish) {
+        document.getElementById('searchDish').value = dish;
+        document.getElementById('dishSuggestions').style.display = 'none';
+        applyFilters();
+    }
+
+    function getUserLocation() {
+        const loading = document.getElementById('loading');
+        if (navigator.geolocation) {
+            loading.style.display = 'block';
+            navigator.geolocation.getCurrentPosition(
+                (position) => {
+                    const lat = position.coords.latitude;
+                    const lon = position.coords.longitude;
+                    fetch(`https://nominatim.openstreetmap.org/reverse?format=json&lat=${lat}&lon=${lon}&addressdetails=1&accept-language=sr-Latn`)
+                        .then(response => response.json())
+                        .then(data => {
+                            let place = data.address?.city || data.address?.town || data.address?.village || data.address?.municipality || data.address?.state_district;
+                            if (place) {
+                                document.getElementById('filterLocation').value = place;
+                                applyFilters();
+                            }
+                            loading.style.display = 'none';
+                        })
+                        .catch(error => {
+                            console.error('Geolocation fetch error:', error);
+                            loading.style.display = 'none';
+                            displayRestaurants();
+                        });
+                },
+                (error) => {
+                    console.error('Geolocation error:', error.message);
+                    loading.style.display = 'none';
+                    displayRestaurants();
+                },
+                { enableHighAccuracy: false, timeout: 5000, maximumAge: 60000 }
+            );
+        } else {
+            console.error('Geolocation not supported');
+            loading.style.display = 'none';
+            displayRestaurants();
+        }
+    }
+
+    function displayRestaurants() {
+        const results = document.getElementById('results-static');
+        const visibleCards = allCards.filter(card => !card.classList.contains('hidden'));
+        const isMobile = window.matchMedia("(max-width: 768px)").matches;
+        const cardsPerPage = isMobile ? 4 : 10;
+        const start = currentPage * cardsPerPage;
+        const end = start + cardsPerPage;
+
+        allCards.forEach((card, index) => {
+            if (card.classList.contains('hidden')) {
+                card.style.display = 'none';
+            } else {
+                card.style.display = (index >= start && index < end) ? 'block' : 'none';
+            }
+        });
+
+        document.getElementById('scrollLeft').disabled = currentPage === 0;
+        document.getElementById('scrollRight').disabled = end >= visibleCards.length;
+        clearTimeout(loadingTimeout);
+        document.getElementById('loading').style.display = 'none';
+
+        if (visibleCards.length === 0) {
+            results.innerHTML = `
+                <div class="no-results">
+                    <p>Nema rezultata za zadate filtere. Pokušajte da promenite pretragu.</p>
+                </div>
+            `;
+            document.getElementById('scrollLeft').disabled = true;
+            document.getElementById('scrollRight').disabled = true;
+        } else if (results.querySelector('.no-results')) {
+            results.innerHTML = '';
+            allCards.forEach(card => {
+                if (!card.classList.contains('hidden')) {
+                    results.appendChild(card);
+                }
+            });
+        }
+    }
+
+    function scrollRestaurantsLeft() {
+        if (currentPage > 0) {
+            currentPage--;
+            showLoadingWithDelay();
+            displayRestaurants();
+        }
+    }
+
+    function scrollRight() {
+        const isMobile = window.matchMedia("(max-width: 768px)").matches;
+        const cardsPerPage = isMobile ? 4 : 10;
+        const visibleCards = allCards.filter(card => !card.classList.contains('hidden'));
+        if ((currentPage + 1) * cardsPerPage < visibleCards.length) {
+            currentPage++;
+            showLoadingWithDelay();
+            displayRestaurants();
+        }
+    }
+
+    function showLoadingWithDelay() {
+        clearTimeout(loadingTimeout);
+        document.getElementById('loading').style.display = 'block';
+        loadingTimeout = setTimeout(() => {
+            document.getElementById('loading').style.display = 'none';
+        }, 500);
+    }
+
+    function showDishSuggestions() {
+        const input = document.getElementById('searchDish').value;
+        const normalizedInput = normalizeSerbian(input);
+        const suggestionsDiv = document.getElementById('dishSuggestions');
+        suggestionsDiv.innerHTML = '';
+        if (input.length === 0) {
+            suggestionsDiv.style.display = 'none';
+            return;
+        }
+
+        const matchingDishes = dishesList.filter(dish => normalizeSerbian(dish).startsWith(normalizedInput));
+        if (matchingDishes.length > 0) {
+            matchingDishes.forEach(dish => {
+                const suggestion = document.createElement('div');
+                suggestion.className = 'suggestion';
+                suggestion.textContent = dish;
+                suggestion.onclick = () => {
+                    document.getElementById('searchDish').value = dish;
+                    suggestionsDiv.style.display = 'none';
+                    applyFilters();
+                };
+                suggestionsDiv.appendChild(suggestion);
+            });
+            suggestionsDiv.style.display = 'block';
+        } else {
+            suggestionsDiv.style.display = 'none';
+        }
+    }
+
+    function showSuggestions() {
+        const input = document.getElementById('filterLocation').value.toLowerCase();
+        const normalizedInput = normalizeSerbian(input);
+        const suggestionsDiv = document.getElementById('locationSuggestions');
+        suggestionsDiv.innerHTML = '';
+        if (input.length === 0) {
+            suggestionsDiv.style.display = 'none';
+            return;
+        }
+
+        const locations = [...new Set(allCards.map(card => card.dataset.location))];
+        const matchingLocations = locations.filter(loc => normalizeSerbian(loc).includes(normalizedInput));
+        if (matchingLocations.length > 0) {
+            matchingLocations.forEach(loc => {
+                const suggestion = document.createElement('div');
+                suggestion.className = 'suggestion';
+                suggestion.textContent = loc;
+                suggestion.onclick = () => {
+                    document.getElementById('filterLocation').value = loc;
+                    suggestionsDiv.style.display = 'none';
+                    applyFilters();
+                };
+                suggestionsDiv.appendChild(suggestion);
+            });
+            suggestionsDiv.style.display = 'block';
+        } else {
+            suggestionsDiv.style.display = 'none';
+        }
+    }
+
+    function applyFilters() {
+        const dishQuery = document.getElementById('searchDish').value;
+        const normalizedDishQuery = normalizeSerbian(dishQuery);
+        const locationFilter = document.getElementById('filterLocation').value.toLowerCase();
+        const normalizedLocationFilter = normalizeSerbian(locationFilter);
+        const priceFilter = document.getElementById('filterPrice').value.toLowerCase();
+        const results = document.getElementById('results-static');
+        const loading = document.getElementById('loading');
+
+        showLoadingWithDelay();
+
+        let hasResults = false;
+        allCards.forEach(card => {
+            const normalizedDishes = card.dataset.dishes.split(', ').map(dish => normalizeSerbian(dish.trim()));
+            const matchesDish = !dishQuery || normalizedDishes.some(dish => dish.includes(normalizedDishQuery) || normalizedDishQuery.includes(dish));
+            const matchesLocation = !locationFilter || normalizeSerbian(card.dataset.location) === normalizedLocationFilter;
+            const matchesPrice = !priceFilter || card.dataset.price === priceFilter;
+            if (matchesDish && matchesLocation && matchesPrice) {
+                card.classList.remove('hidden');
+                hasResults = true;
+            } else {
+                card.classList.add('hidden');
+            }
+        });
+
+        currentPage = 0;
+        if (!hasResults) {
+            results.innerHTML = `
+                <div class="no-results">
+                    <p>Nema rezultata za zadate filtere. Pokušajte da promenite pretragu.</p>
+                </div>
+            `;
+            document.getElementById('scrollLeft').disabled = true;
+            document.getElementById('scrollRight').disabled = true;
+        } else if (results.querySelector('.no-results')) {
+            results.innerHTML = '';
+            allCards.forEach(card => {
+                if (!card.classList.contains('hidden')) {
+                    results.appendChild(card);
+                }
+            });
+        }
+
+        // Save current filters to localStorage
+        localStorage.setItem('lastLocation', document.getElementById('filterLocation').value || '');
+        localStorage.setItem('lastDish', dishQuery || '');
+        localStorage.setItem('lastPrice', priceFilter || '');
+
+        displayRestaurants();
+        updateDishTabs();
+        document.getElementById('locationSuggestions').style.display = 'none';
+        document.getElementById('dishSuggestions').style.display = 'none';
+    }
+
+    function updateDishTabs() {
+        const currentDish = document.getElementById('searchDish').value;
+        const tabs = document.querySelectorAll('.dish-tab');
+        tabs.forEach(tab => {
+            tab.classList.toggle('active', tab.textContent === currentDish);
+        });
+    }
+
+    let currentImageIndex = 0;
+    let currentImages = [];
+
+    function openImageModal(index) {
+        if (currentImages.length === 0) return;
+        currentImageIndex = index;
+        const modalImage = document.getElementById('modalImage');
+        modalImage.src = currentImages[index];
+        modalImage.alt = 'Restaurant Image';
+        document.getElementById('imageModal').style.display = 'flex';
+        document.getElementById('prevImage').disabled = index === 0;
+        document.getElementById('nextImage').disabled = index === currentImages.length - 1;
+    }
+
+    function closeImageModal() {
+        document.getElementById('imageModal').style.display = 'none';
+        currentImageIndex = 0;
+    }
+
+    function showPrevImage() {
+        if (currentImageIndex > 0) {
+            currentImageIndex--;
+            document.getElementById('modalImage').src = currentImages[currentImageIndex];
+            document.getElementById('prevImage').disabled = currentImageIndex === 0;
+            document.getElementById('nextImage').disabled = false;
+        }
+    }
+
+    function showNextImage() {
+        if (currentImageIndex < currentImages.length - 1) {
+            currentImageIndex++;
+            document.getElementById('modalImage').src = currentImages[currentImageIndex];
+            document.getElementById('prevImage').disabled = false;
+            document.getElementById('nextImage').disabled = currentImageIndex === currentImages.length - 1;
+        }
+    }
+
+    window.onclick = (event) => {
+        const locationSuggestions = document.getElementById('locationSuggestions');
+        const dishSuggestions = document.getElementById('dishSuggestions');
+        if (!event.target.matches('#filterLocation') && !event.target.matches('#searchDish') && !event.target.matches('.suggestion') && !event.target.matches('.dish-tab')) {
+            locationSuggestions.style.display = 'none';
+            dishSuggestions.style.display = 'none';
+        }
+    };
+</script>

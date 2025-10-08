@@ -1,0 +1,37 @@
+name: Gde Jesti
+description: Pronađite najbolje kafane i restorane u Srbiji!
+url: ""
+baseurl: ""
+# No global permalink
+# permalink: pretty
+
+collections:
+  restorani:
+    output: true
+    permalink: /restoran/:name/
+    output_ext: .html
+
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      title: "Gde Jesti - Najbolji Restorani i Kafići u Srbiji"
+      description: "Pronađite najbolje restorane i kafiće u Srbiji po jelu, lokaciji i ceni."
+  - scope:
+      path: "_restorani"
+      type: restorani
+    values:
+      layout: restaurant_detail
+      title: "{{ page.restaurant.Name }} - {{ page.restaurant.Location }}"
+      description: "Posetite {{ page.restaurant.Name }} u {{ page.restaurant.Location }} za {{ page.restaurant.Dishes }}."
+
+# Explicitly define exclusions to avoid ambiguity
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - .jekyll-cache
+  - vendor

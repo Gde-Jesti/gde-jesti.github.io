@@ -1,0 +1,356 @@
+---
+layout: default
+---
+<!DOCTYPE html>
+<html lang="sr" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ page.title }} | Srpski Restorani</title>
+  <meta name="description" content="{{ page.description | truncate: 160 }}">
+  {% seo %}
+
+  <style>
+  :root {
+    /* Color Variables */
+    --color-primary: #FF9900;
+    --color-secondary: #232F3E;
+    --color-background: #EAEDED;
+    --color-card-background: #FFFFFF;
+    --color-header-red: #A30000;
+    --color-accent: #4B0082;
+    --color-border: #D5DBDB;
+    --color-text: #1A1A1A;
+  }
+
+  body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: var(--color-background);
+    color: var(--color-text);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+
+  main {
+    flex-grow: 1;
+  }
+
+  header {
+    background: linear-gradient(45deg, var(--color-header-red), var(--color-primary), var(--color-accent));
+    background-size: 300% 100%;
+    color: white;
+    text-align: center;
+    padding: 1.5rem 1rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    animation: gradientShift 10s ease-in-out infinite;
+  }
+
+  @keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+
+  header h1 {
+    margin: 0;
+    font-size: 2.5rem;
+    font-weight: 700;
+  }
+
+  header p {
+    margin: 0.5rem 0 0;
+    font-size: 1.1rem;
+    opacity: 0.9;
+  }
+
+  #details {
+    background: var(--color-card-background);
+    margin: 2rem 1rem;
+    padding: 2.5rem;
+    border-radius: 8px;
+    border: 1px solid var(--color-border);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    border: 2px double var(--color-primary);
+  }
+
+  #details h1 {
+    border-bottom: 4px double var(--color-primary);
+    
+  }
+
+  #details h2 {
+    font-size: 2rem;
+    color: var(--color-secondary);
+    border-bottom: 2px solid var(--color-primary);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  #detailContent {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+  }
+
+  #detailContent h1 {
+    font-size: 2.5rem;
+    color: var(--color-header-red);
+    margin-top: 0;
+    width: 100%;
+  }
+
+  .description {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin: 1rem 0;
+    color: var(--color-text);
+    width: 100%;
+  }
+
+  /* Columns */
+  .left-column,
+  .right-column {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .text-content {
+    line-height: 1.6;
+    width: 100%;
+    text-align: left;
+    padding-right: 0;
+  }
+
+  .text-content p,
+  .text-content ul {
+    margin: 0 0 1rem 0;
+  }
+
+  .text-content ul {
+    list-style-type: disc;
+    padding-left: 1.5rem;
+  }
+
+  .text-content p strong {
+    color: var(--color-secondary);
+  }
+
+  .text-content a {
+    color: var(--color-primary);
+    text-decoration: none;
+    font-weight: bold;
+  }
+
+  .text-content a:hover {
+    text-decoration: underline;
+  }
+
+  .images-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+    align-self: start;
+    justify-self: center;
+    width: 100%;
+    margin-top: 1rem;
+  }
+
+  .images-grid img {
+    width: 100%;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 4px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    border: 1px solid var(--color-border);
+    transition: opacity 0.2s;
+  }
+
+  .images-grid img:hover {
+    opacity: 0.85;
+  }
+
+  /* Back Button Styles */
+  .back-button {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    margin-top: 1.5rem;
+    background-color: var(--color-primary);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    transition: background-color 0.2s;
+  }
+
+  .back-button:hover {
+    background-color: #e68a00;
+  }
+
+  /* Responsive Styles */
+  @media (min-width: 769px) {
+    #detailContent {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2.5rem;
+      flex-direction: unset;
+      
+    }
+
+    #detailContent h1 {
+      grid-column: 1 / -1;
+    }
+
+    .left-column {
+      grid-column: 1;
+      width: 100%;
+    }
+
+    .right-column {
+      grid-column: 2;
+      width: 100%;
+    }
+
+    .text-content {
+      padding-right: 0;
+    }
+
+    .images-grid {
+      justify-self: start;
+      margin-top: 0;
+    }
+
+    .images-grid img {
+      height: 150px;
+    }
+
+    #details {
+      padding: 3rem;
+      border: 2px solid var(--color-primary);
+    }
+
+    .back-button {
+      margin-left: 0;
+    }
+  }
+
+  @media (max-width: 768px) {
+    header h1 {
+      font-size: 2rem;
+    }
+
+    #details {
+      padding: 1.5rem 1rem;
+      margin: 1rem 0.5rem;
+    }
+
+    .images-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.75rem;
+      width: 100%;
+    }
+
+    .back-button {
+      margin-left: 0;
+    }
+  }
+</style>
+
+</head>
+
+<body>
+  <main>
+    <header>
+      <h1><a href="/" style="color: white; text-decoration: none; font-family: 'Arial', sans-serif;">Gde Jesti</a></h1>
+      <p>Pronađi najbolje kafiće i restorane po svom ukusu!</p>
+    </header>
+
+    <section id="details">
+      <div id="detailContent">
+        {{ content }}
+      </div>
+      <a href="/" class="back-button">Nazad na pretragu</a>
+    </section>
+
+    <div id="imageModal">
+      <div id="modalContent">
+        <button class="modal-close">&times;</button>
+        <img id="modalImage" alt="Restaurant Image">
+        <div class="modal-nav">
+          <button id="prevImage" class="modal-nav-button">Previous</button>
+          <button id="nextImage" class="modal-nav-button">Next</button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    let currentImageIndex = 0;
+    let currentImages = [];
+
+    window.onload = () => {
+      const modal = document.getElementById('imageModal');
+      const closeModal = document.querySelector('.modal-close');
+      const prevButton = document.getElementById('prevImage');
+      const nextButton = document.getElementById('nextImage');
+
+      modal.addEventListener('click', function (event) {
+        if (event.target === modal) {
+          closeImageModal();
+        }
+      });
+
+      closeModal.addEventListener('click', closeImageModal);
+      prevButton.addEventListener('click', showPrevImage);
+      nextButton.addEventListener('click', showNextImage);
+
+      document.querySelectorAll('.images-grid img').forEach((img, index) => {
+        img.addEventListener('click', () => openImageModal(index));
+      });
+
+      currentImages = Array.from(document.querySelectorAll('.images-grid img')).map(img => img.src);
+    };
+
+    function openImageModal(index) {
+      if (currentImages.length === 0) return;
+      currentImageIndex = index;
+      const modalImage = document.getElementById('modalImage');
+      modalImage.src = currentImages[index];
+      modalImage.alt = 'Restaurant Image';
+      document.getElementById('imageModal').style.display = 'flex';
+      document.getElementById('prevImage').disabled = index === 0;
+      document.getElementById('nextImage').disabled = index === currentImages.length - 1;
+    }
+
+    function closeImageModal() {
+      document.getElementById('imageModal').style.display = 'none';
+      currentImageIndex = 0;
+    }
+
+    function showPrevImage() {
+      if (currentImageIndex > 0) {
+        currentImageIndex--;
+        document.getElementById('modalImage').src = currentImages[currentImageIndex];
+        document.getElementById('prevImage').disabled = currentImageIndex === 0;
+        document.getElementById('nextImage').disabled = false;
+      }
+    }
+
+    function showNextImage() {
+      if (currentImageIndex < currentImages.length - 1) {
+        currentImageIndex++;
+        document.getElementById('modalImage').src = currentImages[currentImageIndex];
+        document.getElementById('prevImage').disabled = false;
+        document.getElementById('nextImage').disabled = currentImageIndex === currentImages.length - 1;
+      }
+    }
+  </script>
+</body>
+</html>
