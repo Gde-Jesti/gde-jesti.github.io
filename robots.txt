@@ -1,4 +1,4 @@
 User-agent: *
 Disallow: /assets/
 Disallow: /.jekyll-cache/
-Sitemap: https://gde-jesti.github.io//sitemap.xml
+Sitemap: https://gde-jesti.github.io/sitemap.xml

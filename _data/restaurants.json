@@ -1,6 +1,6 @@
 [
   {
-    "ID": 1,
+    "ID": 1001,
     "Name": "Boss Caffe Picerija",
     "Location": "Subotica",
     "Dishes": "Pizza, Steak, Roštilj, Ćevapi, Pljeskavica, Supa, Salate, Desert, Jela sa prženjem, Jela od mesa",
@@ -9,10 +9,26 @@
     "Phone": "+381 24 551111; +381 65 6551111",
     "Website": "https://www.bosscaffe.com/",
     "Description": "Boss Caffe Picerija je simbol gastronomske scene Subotice. Osnovan 1986. godine, poznat je po izuzetnoj ponudi Pizza, Steak-a, Roštilja, Ćevapa i Pljeskavica. Meni uključuje Supa, Salate, Desert i jela sa prženjem, uz raznovrsne mesne specijalitete. Enterijer je moderan, sa prijatnom atmosferom. Terasa je posebno popularna leti. Idealno mesto za večeru, ručak ili druženje uz kvalitetnu hranu i piće.",
-    "Image URLs": []
+    "Image URLs": [
+      "https://www.subotica.biz/files/gallery/146/2019.09.13.18.34.07_5d7bc4ff4b741_1.jpg"
+    ]
   },
   {
-    "ID": 2,
+    "ID": 1854,
+    "Name": "Bella Napoli kod Garića",
+    "Location": "Zemun",
+    "Dishes": "Pizza, Pasta, Salate, Jela od mesa, Supa, Desert, Prilozi, Steak, Roštilj, Jela od ribe",
+    "Price Range": "Medium",
+    "Address": "Zmaj Jovina 35, 11080 Zemun",
+    "Phone": "069 2198162",
+    "Website": "bellanapoli.rs",
+    "Description": "Bella Napoli kod Garića je popularna italijanska pizzeria u Beogradu, poznata po autentičnoj Italijanskoj kuhinji. U meniju su Pizza, Pasta, Salate, kao i jela od mesa, Supa, Desert i Prilozi. Ambijent je prijatan i porodičan, sa toplom uslugom i prijatnom atmosferom. Idealno mesto za ljubitelje italijanske hrane i opuštenu večeru uz dobar izbor vina.",
+    "Image URLs": [
+      "https://raw.githubusercontent.com/Gde-Jesti/images/refs/heads/main/Bella%20Napoli%20kod%20Gari%C4%87a.webp"
+    ]
+  },
+  {
+    "ID": 1002,
     "Name": "Stara Picerija – Since 1977",
     "Location": "Subotica",
     "Dishes": "Pizza, Supa, Salate, Ćevapi, Pljeskavica, Gulaš, Jela od mesa, Deserti, Jagnjetina, Punjene Paprike",
@@ -21,10 +37,12 @@
     "Phone": "+381 24 551-835",
     "Website": "https://www.starapicerija.com/",
     "Description": "Stara Picerija u srcu Subotice je najstarija picerija u Srbiji, sa tradicijom od 1977. godine. Njihov meni uključuje Pizza, Supa, Salate, Ćevapi, Pljeskavica, Gulaš i Jela od mesa. Pored toga, nude Deserti, Jagnjetinu i Punjene Paprike. Ambijent kombinuje nostalgičan šmek i udobnost. Usluga je prijateljska, a hrana pripremljena sa pažnjom. Idealno za opušteni ručak ili večeru.",
-    "Image URLs": []
+    "Image URLs": [
+      "https://www.starapicerija.com/img/04.jpg"
+    ]
   },
   {
-    "ID": 3,
+    "ID": 1003,
     "Name": "DENIS Gastro Temple",
     "Location": "Subotica",
     "Dishes": "Pizza, Riblja Čorba, Pečena Riba, Steak, Ćevapi, Pljeskavica, Supa, Salate, Pasta, Jela od mesa",
@@ -33,76 +51,88 @@
     "Phone": "+381 24 551155; +381 63 741-3608",
     "Website": "https://denisgastrotemple.rs/",
     "Description": "DENIS Gastro Temple je poznat po spoju elegancije i kulinarske izvrsnosti. U meniju se ističu Pizza, Riblja Čorba, Pečena Riba, Steak i Ćevapi. Nude i Pljeskavica, Supa, Salate, Pasta i razna jela od mesa. Enterijer je sofisticiran sa baštom. Osoblje je profesionalno i uslužno. Savršen izbor za porodične obroke, poslovne sastanke i romantične večere.",
-    "Image URLs": []
+    "Image URLs": [
+      "https://raw.githubusercontent.com/Gde-Jesti/images/refs/heads/main/denis%20gastro%20temple%20subotica.webp"
+    ]
   },
   {
-    "ID": 4,
-    "Name": "Gostiona Madera",
-    "Location": "Subotica",
-    "Dishes": "Jela od mesa, Riblja Čorba, Pečena Riba, Salate, Steak, Ćevapi, Supa, Pljeskavica, Deserti, Jagnjetina",
-    "Price Range": "Medium",
-    "Address": "Ustanka 6, Subotica",
-    "Phone": "+381 24 546-950",
-    "Website": "https://www.madera.rs",
-    "Description": "Gostiona Madera kombinuje domaću tradiciju i internacionalne ukuse. Posebno su poznati po jelima od mesa, Ribljoj Čorbi i Pečenoj Ribi. Meni uključuje Salate, Steak, Ćevapi, Supu, Pljeskavicu, Deserte i Jagnjetinu. Ambijent je topao i prijatan sa domaćinskom atmosferom. Osoblje je ljubazno. Idealan izbor za ručak, večeru ili proslavu.",
-    "Image URLs": []
+    "ID": 2004,
+    "Name": "Mala Gostiona Elitte",
+    "Location": "Palić",
+    "Dishes": "Jela od mesa, Riblja Čorba, Pečena Riba, Salate, Gulaš, Steak, Ćevapi, Supa, Pljeskavica, Deserti, Jagnjetina",
+    "Price Range": "High",
+    "Address": "Park Heroja 15, Subotica, Vojvodina, 24413",
+    "Phone": "024 753447",
+    "Website": "https://www.elittepalic.rs",
+    "Description": "Mala Gosti­na je tradicionalni restoran u Paliću sa skoro dva veka dugom tradicijom, poznat po vojvođanskoj kuhinji i prostranom ambijentu sa velikom terasom i kapacitetom za više od 500 gostiju. Restoran se nalazi u neposrednoj blizini obale Palićkog jezera i šetališta. Njegova arhitektura u stilu mađarske secesije dočarava zlatno doba Palića, a prostrana sala i terasa omogućavaju prijatan boravak za sve uzraste. Za decu je dostupna igraonica i igralište, dok se restoran može koristiti za venčanja i poslovne proslave.",
+    "Image URLs": [
+      "https://raw.githubusercontent.com/Gde-Jesti/images/refs/heads/main/Mala-gostiona-1.webp"
+    ]
   },
   {
-    "ID": 5,
-    "Name": "Restoran Bulevar",
+    "ID": 1005,
+    "Name": "BULEVAR CAFFE",
     "Location": "Subotica",
-    "Dishes": "Jela od mesa, Salate, Supa, Deserti, Ćevapi, Pljeskavica, Gulaš, Pizza, Jagnjetina, Punjene Paprike",
+    "Dishes": "Pizza, Kafa, Pivo, Omlet, Tortilje, Posna Hrana, Veganska hrana",
     "Price Range": "Medium",
     "Address": "Branislava Nušića 4A, Subotica",
-    "Phone": "+381 24 544-666",
+    "Phone": "+381 24 554888",
     "Website": "",
-    "Description": "Restoran Bulevar je moderno uređeno mesto u centru Subotice. Njihov meni uključuje jela od mesa, Salate, Supu i Deserte. Takođe nude Ćevapi, Pljeskavica, Gulaš, Pizza, Jagnjetina i Punjene Paprike. Ambijent je prijatan, pogodan za ručak, večeru ili proslavu. Osoblje je ljubazno i profesionalno. Idealno za uživanje u kvalitetnoj hrani u centru grada.",
-    "Image URLs": []
+    "Description": "Restoran Bulevar nudi bogatu lepezu sadržaja svojim gostima — od jutarnje kafe uz novine, preko raznovrsnog jelovnika sa specijalitetima, do večernje zabave često uz muziku uživo. U ponudi su alkoholna i bezalkoholna pića, kvalitetna vina sa subotičke peščare, kokteli, milkšejkovi i mnogo toga drugog. Jelovnik je obogaćen Totally Wellness menijem koji je osmislila Tatjana Popović, prvi Health Coach u Srbiji, sa posnim, veganskim, vegetarijanskim i makrobiotičkim receptima, kao i zdravim poslasticama bez rafinisanog šećera. Dnevni ugođaj upotpunjuju pažljivo birana muzika, besplatan Wi-Fi internet i dnevna štampa dostupna gostima. Tokom letnjih meseci, prijatan ambijent pruža hladovina pod suncobranima i drvećem, uz pogled na fontanu, u samom centru grada. Ljubazno osoblje, prijatna atmosfera i izvrsna kuhinja čine Bulevar idealnim mestom za odmor i uživanje u svakom delu dana.",
+    "Image URLs": [
+      "https://raw.githubusercontent.com/Gde-Jesti/images/refs/heads/main/Bulevar.webp",
+      "https://raw.githubusercontent.com/Gde-Jesti/images/refs/heads/main/Restoran%2C-bistro-i-pizzeria-103.jpg.webp"
+    ]
   },
   {
-    "ID": 6,
+    "ID": 1006,
     "Name": "MARA Lounge & Bar",
     "Location": "Subotica",
     "Dishes": "Kafa, Sendviči, Limunada, Doručak, Pivo, Panceroti, Pileća Korpa, Roštilj, Ovali, Omlet, Palačinke, Salate, Pomfrit",
     "Price Range": "Medium",
     "Address": "Matije Gupca 19, Subotica",
-    "Phone": "",
-    "Website": "",
+    "Phone": "063 559393",
+    "Website": "https://www.instagram.com/mara.lounge.bar/",
     "Description": "MARA Lounge & Bar u Subotici je moderan ambijent za uživanje u kafi, koktelima i opuštenoj atmosferi. Savršen za druženje, pauze tokom dana ili večernje izlaske. Na Instagramu ističu da je to mesto gde ‘kad ti dan zatreba pauzu — znaš gde smo’.",
     "Image URLs": [
-       
+       "https://www.subotica.com/files/_thumb/645x430/news/5/5/3/51553/51553-suboticacom-24apr2025-subotica-5200015.jpg"
     ]
   },
   {
-    "ID": 7,
-    "Name": "Bowling-Restaurant Krupara",
+    "ID": 1007,
+    "Name": "Bowling-Restoran Krupara",
     "Location": "Bačko Dušanovo",
     "Dishes": "Roštilj, Ćevapi, Pljeskavica, Gulaš, Jela od mesa, Supa, Salate, Pečena Riba, Deserti, Punjene Paprike",
     "Price Range": "Medium",
     "Address": "Nikole Tesle, Bačko Dušanovo",
     "Phone": "+381 24 783-515",
     "Website": "https://www.bowling.rs/",
-    "Description": "Bowling-Restaurant Krupara je kompleks koji kombinuje gastronomiju, sport i zabavu. Restoran nudi raznovrsnu ponudu roštilja i jela od mesa, uključujući Ćevapi, Pljeskavica, Gulaš, Supa, Pečena Riba i Salate. Takođe nude Punjene Paprike i Deserte. Ambijent je opušten i porodičan, sa baštom i sportskim sadržajem. Idealan je za druženja, proslave i izlete. Usluga je prijatna, a hrana kvalitetna i ukusna.",
-    "Image URLs": []
+    "Description": "Bowling-Restoran Krupara je kompleks koji kombinuje gastronomiju, sport i zabavu. Restoran nudi raznovrsnu ponudu roštilja i jela od mesa, uključujući Ćevapi, Pljeskavica, Gulaš, Supa, Pečena Riba i Salate. Takođe nude Punjene Paprike i Deserte. Ambijent je opušten i porodičan, sa baštom i sportskim sadržajem. Idealan je za druženja, proslave i izlete. Usluga je prijatna, a hrana kvalitetna i ukusna.",
+    "Image URLs": [
+      "https://raw.githubusercontent.com/Gde-Jesti/images/refs/heads/main/Bowling-Restaurant-Krupara.webp",
+      "https://www.bowling.rs/wp-content/uploads/2023/01/odraslezabave-1024x614-1.jpg"
+    ]
   },
   {
-    "ID": 8,
+    "ID": 1008,
     "Name": "Gostiona Gurinović",
     "Location": "Subotica",
-    "Dishes": "Roštilj, Ćevapi, Pljeskavica, Gulaš, Sarma, Supa, Salate, Pečena Riba, Jela od mesa, Deserti",
-    "Price Range": "Medium",
+    "Dishes": "Roštilj, Ćevapi, Pljeskavica, Bečka šnicla, Karađorđeva šnicla, Ćureća šnicla 'Botond', Piletina sa kikirikijem, Teleća šnicla u kajmaku, Goveđi gulaš sa rezancima, Nagusto tarana sa kobasicom, Rolovana teletina, Svinjska butkica na šalasarski način, Pohovana somovina, Fileti smuđa sa pečurkama, Prženi šaran, Dimljena pastrmka sa bademom, Šopska salata, Kupus salata, Pečena paprika, Paradajz salata, Gomboce sa šljivama, Gundel palačinke, Subotičke palačinke",
+    "Price Range": "Srednje",
     "Address": "Bajski put 32, Subotica",
-    "Phone": "+381 24 554-934",
-    "Website": "",
-    "Description": "Gostiona Gurinović je omiljeno mesto za ljubitelje domaće kuhinje u Subotici. U ponudi su Roštilj, Ćevapi, Pljeskavica, Gulaš, Sarma, Supa, Salate, Pečena Riba, Jela od mesa i Deserti. Ambijent je rustičan i prijatan sa toplom domaćinskom atmosferom. Idealno za porodične ručkove i večere. Osoblje je ljubazno i posvećeno, a hrana pripremljena sa kvalitetnim sastojcima. Mesto gde tradicija i ukus idu ruku pod ruku.",
-    "Image URLs": []
+    "Phone": "024 557800",
+    "Website": "https://www.facebook.com/people/Gostiona-Gurinović/61575899047187",
+    "Description": "Gostiona Gurinović je jedan od najpoznatijih restorana domaće kuhinje u Subotici, poznat po bogatom jelovniku, autentičnim specijalitetima i prijatnom ambijentu. Nalazi se u mirnom delu grada, idealnom za porodične ručkove, poslovne sastanke i okupljanja s prijateljima. Na meniju se nalaze tradicionalna jela poput goveđeg gulaša sa rezancima, karađorđeve i bečke šnicle, ćureće šnicle 'Botond', teleće šnicle u kajmaku, piletine sa kikirikijem i raznovrsnih jela sa roštilja. Ljubitelji ribe mogu uživati u pohovanoj somovini, filetu smuđa sa pečurkama ili dimljenoj pastrmki sa bademom. Uz jela se služe sveže salate poput šopske, kupus i pečene paprike, a obrok se može završiti tradicionalnim desertima kao što su gomboce sa šljivama ili gundel palačinke. Gurinović je mesto gde se tradicija, ukus i domaćinska toplina spajaju u nezaboravno gastronomsko iskustvo. Radno vreme je od ponedeljka do subote od 12:00 do 19:00, dok je nedeljom zatvoreno.",
+    "Image URLs": [
+      "https://raw.githubusercontent.com/Gde-Jesti/images/refs/heads/main/499954074_122114897006863301_6704076115090296253_n.webp"
+    ]
   },
   {
-    "ID": 9,
+    "ID": 1009,
     "Name": "Gyros Way",
     "Location": "Subotica",
     "Dishes": "Giros, Pileći, Vegetarijanski, Tortilja, Pomfrit, Salata, Sosovi, Piće",
-    "Price Range": "Povremeno jeftino-srednje",  
+    "Price Range": "Low",  
     "Address": "Vase Stajića 7, Subotica",
     "Phone": "+381 66 515 51 51",
     "Website": "",
@@ -113,43 +143,49 @@
     ]
   },
   {
-    "ID": 10,
-    "Name": "Gostiona Petica",
+    "ID": 1010,
+    "Name": "Daraboš Nova",
     "Location": "Subotica",
-    "Dishes": "Jela od mesa, Ćevapi, Pljeskavica, Supa, Sarma, Gulaš, Punjene Paprike, Salate, Deserti, Burek",
+    "Dishes": "Kafa, Kolači, Torte, Palačinke, Limunada, Sendviči, Slani Program, Slatki Program",
     "Price Range": "Medium",
-    "Address": "Lajoša Joa 57, Subotica",
-    "Phone": "+381 24 534-128",
-    "Website": "",
-    "Description": "Gostiona Petica je popularno mesto u Prozivci poznato po domaćoj kuhinji. Nude jela od mesa, Ćevapi, Pljeskavica, Supa, Sarma, Gulaš i Punjene Paprike. Takođe imaju Salate, Deserte i Burek. Ambijent je jednostavan, domaćinski i prijatan, sa toplom atmosferom. Idealno za porodični ručak ili opuštenu večeru. Osoblje je ljubazno, a hrana bogata ukusima domaće tradicije.",
-    "Image URLs": []
+    "Address": "Petra Drapšina 18, Subotica 24000",
+    "Phone": "024 523202",
+    "Website": "darabos.rs",
+    "Description": "Daraboš Nova je vodeća kafe poslastičarnica u Subotici, poznata po tradicionalnim i modernim poslasticama. Osim širokog izbora kolača i slatkog programa, nude i slani program koji uključuje razne vrste sendviča iz domaće kuhinje. A uz sve to očekuje vas i prvoklasna limunada.",
+    "Image URLs": [
+      "https://raw.githubusercontent.com/Gde-Jesti/images/refs/heads/main/palacinke%20(1).webp"
+    ]
   },
   {
-    "ID": 11,
+    "ID": 1011,
     "Name": "Konoba Kujundžić",
     "Location": "Subotica",
-    "Dishes": "Riblja Čorba, Pečena Riba, Jela od mesa, Ćevapi, Pljeskavica, Gulaš, Sarma, Salate, Supa, Deserti",
+    "Dishes": "Vino, Riblja Čorba, Pečena Riba, Kotlić, Jela od mesa, Kafa, Salate, Supa, Deserti",
     "Price Range": "Medium",
     "Address": "Vase Stajića 14, Subotica",
-    "Phone": "+381 60 052-3316",
+    "Phone": "+381 (0)60 05 23 316, +381 (0)24 522 401",
     "Website": "",
-    "Description": "Konoba Kujundžić kombinuje mirise mora i domaće kuhinje. Posebno su poznati po Ribljoj Čorbi, Pečenoj Ribi i jelima od mesa. Nude i Ćevapi, Pljeskavica, Gulaš, Sarma, Salate, Supu i Deserte. Ambijent je rustičan-mediteranski sa prijatnom muzikom. Idealno za porodične večere i posebne prilike. Osoblje je ljubazno, a hrana autentična i sveža.",
-    "Image URLs": []
+    "Description": "Konoba Kujundžić nalazi se u samom centru Subotice i predstavlja pravo utočište za sve ljubitelje vina, tradicije i domaće atmosfere. Ova konoba odiše duhom prošlih vremena, gde se poštovanje prema vinovoj lozi i umetnosti pravljenja vina prenosi s kolena na koleno. Svaka kap vina koje se ovde služi nosi u sebi priču o Subotičko-horgoškoj peščari, o zemlji koja rađa posebne sorte grožđa i o ljudima koji s ljubavlju i znanjem neguju tradiciju vinarstva. Domaćin konobe je vitez vina Arena Zabatkiensis, strastveni poznavalac vina koji gostima na autentičan način približava bogatstvo i raznolikost lokalnih sorti. U toplom i prijatnom ambijentu možete uživati u poznatim vinima poput kededinke, kadarke, rizlinga, ali i u mnogim drugim vrstama vina sa peska, uz priče o njihovom poreklu i načinu proizvodnje. Poseta konobi je jedinstveno iskustvo koje spaja ukus, miris i tradiciju severa Bačke. Zbog ograničenog broja mesta i želje da se svakom gostu posveti pažnja, posetu je potrebno unapred najaviti. Konoba Kujundžić nije samo mesto gde se pije vino — to je mesto gde se vino doživljava, gde se spajaju kultura, tradicija i gostoprimstvo Subotice.",
+    "Image URLs": [
+      "https://raw.githubusercontent.com/Gde-Jesti/images/refs/heads/main/konoba-kujundzic-subotica.webp"
+    ]
   },
   {
-    "ID": 12,
+    "ID": 1012,
     "Name": "Konoba Tinel",
     "Location": "Subotica",
     "Dishes": "Riblja Čorba, Pečena Riba, Pasta, Salate, Ćevapi, Pljeskavica, Supa, Deserti, Jela od mesa, Jagnjetina",
     "Price Range": "Medium",
     "Address": "Huga Badalića 14, Subotica",
     "Phone": "+381 24 600-007",
-    "Website": "",
-    "Description": "Konoba Tinel je specijalizovana za morsku kuhinju i riblje specijalitete. Njihov meni obuhvata Riblju Čorbu, Pečenu Ribu, Paste, Salate, Ćevapi, Pljeskavica, Supu, Deserte, jela od mesa i Jagnjetinu. Ambijent je prijatan, sa dosta prirodne svetlosti i delom baštom. Idealno za letnje večere i opuštena druženja. Hrana je sveža, a osoblje ljubazno i posvećeno.",
-    "Image URLs": []
+    "Website": "https://konobatinel.rs/rs",
+    "Description": "Dobro došli u konobu TINEL – brižljivo uređen prostor koji oživljava duh autohtonih dalmatinskih konoba. Svaki predmet i kamen pažljivo su birani od strane domaćina i predati u ruke iskusnim neimarima koji su im udahnuli novi život i pronašli im pravo mesto u ambijentu. Mediteranska kuhinja, kakva se tradicionalno nudila u dalmatinskim konobama, jednostavna je za pripremu, bogata ukusima i spada među najzdravije kuhinje sveta. U ponudi se nalazi veliki izbor vrhunskih vina, sveža morska riba, pečenje sa ražnja i ispod peke (sača), specijaliteti sa roštilja, juhe, rižota i još mnogo toga. Konoba TINEL poznata je i po organizaciji proslava, promocija, poslovnih skupova i romantičnih večera za dvoje uz mediteranske specijalitete i autentične dalmatinske večeri.",
+    "Image URLs": [
+        "https://raw.githubusercontent.com/Gde-Jesti/images/refs/heads/main/konoba-tinel.webp"
+    ]
   },
   {
-    "ID": 13,
+    "ID": 1013,
     "Name": "Restoran Bon Appetit (Dudova Šuma)",
     "Location": "Subotica",
     "Dishes": "Jela od mesa, Steak, Pizza, Salate, Supa, Deserti, Ćevapi, Pljeskavica, Gulaš, Punjene Paprike",
@@ -161,7 +197,7 @@
     "Image URLs": []
   },
   {
-    "ID": 14,
+    "ID": 1014,
     "Name": "Oliva Pizzeria & Salad Bar",
     "Location": "Novi Sad",
     "Dishes": "Pizza, Salate, Pasta, Roštilj, Supa, Deserti, Ćevapi, Gulaš, Pečena Riba, Pljeskavica",
@@ -173,7 +209,7 @@
     "Image URLs": []
   },
   {
-    "ID": 15,
+    "ID": 1115,
     "Name": "Nolita Pizzeria",
     "Location": "Novi Sad",
     "Dishes": "Pizza, Pasta, Salate, Roštilj, Supa, Deserti, Ćevapi, Gulaš, Pečena Riba, Pljeskavica",
@@ -185,7 +221,7 @@
     "Image URLs": []
   },
   {
-    "ID": 16,
+    "ID": 1116,
     "Name": "Petrus Gastro Bar",
     "Location": "Novi Sad",
     "Dishes": "Internacionalna, Roštilj, Jela od mesa, Supa, Salate, Deserti, Ćevapi, Gulaš, Pečena Riba, Pljeskavica",
@@ -197,7 +233,7 @@
     "Image URLs": []
   },
   {
-    "ID": 17,
+    "ID": 1117,
     "Name": "Toster Bar",
     "Location": "Novi Sad",
     "Dishes": "Burger, pljeskavica, vege varijanta, sendvič, prilog, meza, pivo",
@@ -211,7 +247,7 @@
     ]
   },
   {
-    "ID": 18,
+    "ID": 1118,
     "Name": "Mon Ami Marine Club",
     "Location": "Novi Sad",
     "Dishes": "Riblja Čorba, Pečena Riba, Supa, Salate, Deserti, Ćevapi, Gulaš, Jela od mesa, Pljeskavica, Pizza",
@@ -223,7 +259,7 @@
     "Image URLs": []
   },
   {
-    "ID": 19,
+    "ID": 1119,
     "Name": "Herc Food",
     "Location": "Novi Sad",
     "Dishes": "Domaća kuhinja, Sendviči, Panirano jelo",
@@ -235,7 +271,7 @@
     "Image URLs": []
   },
   {
-    "ID": 20,
+    "ID": 1120,
     "Name": "Remek Jelo",
     "Location": "Novi Sad",
     "Dishes": "Domaća kuhinja, Kuvana jela",
@@ -247,7 +283,7 @@
     "Image URLs": []
   },
   {
-    "ID": 21,
+    "ID": 1121,
     "Name": "Pikanterija Bar",
     "Location": "Novi Sad",
     "Dishes": "Roštilj, Pohovana jela, Kuvana jela, Burgere",
@@ -259,7 +295,7 @@
     "Image URLs": []
   },
   {
-    "ID": 22,
+    "ID": 1122,
     "Name": "Danka Bar",
     "Location": "Novi Sad",
     "Dishes": "Sendviči, Pića",
@@ -271,7 +307,7 @@
     "Image URLs": []
   },
   {
-    "ID": 23,
+    "ID": 1123,
     "Name": "The Nook",
     "Location": "Novi Sad",
     "Dishes": "Italijanska kuhinja, Pizza, Pasta",
@@ -283,7 +319,7 @@
     "Image URLs": []
   },
   {
-    "ID": 24,
+    "ID": 1124,
     "Name": "Kombinat Food",
     "Location": "Novi Sad",
     "Dishes": "Internacionalna kuhinja, Jela od mesa, Roštilj",
@@ -297,7 +333,7 @@
 
   
   {
-    "ID": 25,
+    "ID": 1225,
     "Name": "Etno Restoran Fijaker",
     "Location": "Sombor",
     "Dishes": "Roštilj, Ćevapi, Pljeskavica, Gulaš, Sarma, Supa, Salate, Pečena Riba, Jela od mesa, Deserti, Pizza",
@@ -309,7 +345,7 @@
     "Image URLs": []
   },
   {
-    "ID": 26,
+    "ID": 1226,
     "Name": "Restoran Stari Slon",
     "Location": "Sombor",
     "Dishes": "Roštilj, Ćevapi, Pljeskavica, Riblja Čorba, Pečena Riba, Jela od mesa, Supa, Salate, Gulaš, Deserti",
@@ -321,7 +357,7 @@
     "Image URLs": []
   },
   {
-    "ID": 27,
+    "ID": 1227,
     "Name": "Riblja Čarda Andrić",
     "Location": "Sombor",
     "Dishes": "Riblja Čorba, Pečena Riba, Šaran, Som, Supa, Salate, Jela od mesa, Roštilj, Ćevapi, Deserti",
@@ -333,7 +369,7 @@
     "Image URLs": []
   },
   {
-    "ID": 28,
+    "ID": 1228,
     "Name": "Konoba Tera",
     "Location": "Sombor",
     "Dishes": "Pečena Riba, Riblja Čorba, Pasta, Salate, Jagnjetina, Supa, Deserti, Jela od mesa, Pizza, Roštilj",
@@ -345,7 +381,7 @@
     "Image URLs": []
   },
   {
-    "ID": 29,
+    "ID": 1329,
     "Name": "Zlatna Kruna Carda",
     "Location": "Apatin",
     "Dishes": "Riblja Čorba, Pečena Riba, Šaran, Som, Supa, Salate, Roštilj, Ćevapi, Pljeskavica, Deserti",
@@ -357,7 +393,7 @@
     "Image URLs": []
   },
   {
-    "ID": 30,
+    "ID": 1330,
     "Name": "Restoran Marina",
     "Location": "Apatin",
     "Dishes": "Pečena Riba, Riblja Čorba, Šaran na rašljama, Supa, Salate, Jela od mesa, Roštilj, Pizza, Deserti, Pasta",
@@ -369,7 +405,7 @@
     "Image URLs": []
   },
   {
-    "ID": 31,
+    "ID": 1331,
     "Name": "Plava Ruža",
     "Location": "Apatin",
     "Dishes": "Steak, Jela od mesa, Pasta, Salate, Supa, Deserti, Riblja Čorba, Internacionalna kuhinja, Roštilj, Pizza",
@@ -381,7 +417,7 @@
     "Image URLs": []
   },
   {
-    "ID": 32,
+    "ID": 1332,
     "Name": "Garden House Apatin",
     "Location": "Apatin",
     "Dishes": "Roštilj, Ćevapi, Pljeskavica, Supa, Salate, Deserti, Jela od mesa, Pizza, Pasta, Pića",
@@ -393,7 +429,7 @@
     "Image URLs": []
   },
   {
-    "ID": 33,
+    "ID": 1433,
     "Name": "Restoran Agape",
     "Location": "Kula",
     "Dishes": "Jela od mesa, Roštilj, Ćevapi, Pljeskavica, Supa, Salate, Gulaš, Deserti, Pizza, Sarma",
@@ -405,7 +441,7 @@
     "Image URLs": []
   },
   {
-    "ID": 34,
+    "ID": 1434,
     "Name": "Restoran Ćuprija",
     "Location": "Kula",
     "Dishes": "Domaća kuhinja, Ćevapi, Pljeskavica, Gulaš, Sarma, Supa, Salate, Jela od mesa, Deserti, Punjene Paprike",
@@ -417,7 +453,7 @@
     "Image URLs": []
   },
   {
-    "ID": 35,
+    "ID": 1535,
     "Name": "Galija restoran i dečija igraonica",
     "Location": "Sivac",
     "Dishes": "Pljeskavica, Roštilj, Ćevapi, Salate, Jela od mesa, Pizza, Deserti",
@@ -429,7 +465,7 @@
     "Image URLs": []
   },
   {
-    "ID": 36,
+    "ID": 1436,
     "Name": "Pitac Cafe & Food Bar",
     "Location": "Kula",
     "Dishes": "Pizza, Pasta, Sendviči, Salate, Supa, Deserti, Pića, Roštilj, Ćevapi, Limunada",
@@ -439,6 +475,219 @@
     "Website": "https://pitac.rs/",
     "Description": "Pitac Cafe & Food Bar je moderan lokal u Kuli za brze obroke i kafu. Specijalitet su pizze i paste, uz opuštenu atmosferu za druženje. Idealno za mlade i porodice, sa dostavom i prijatnim osobljem.",
     "Image URLs": []
+  },
+
+  {
+    "ID": 1137,
+    "Name": "The Camelot Gastro Pub",
+    "Location": "Novi Sad",
+    "Dishes": "Roštilj, Ćevapi, Pljeskavica, Supa, Salate, Burger, Steak, Pečena Riba, Gulaš, Desert",
+    "Price Range": "High",
+    "Address": "Sremska 9, Novi Sad",
+    "Phone": "+381 21 528095",
+    "Website": "https://thecamelot.rs",
+    "Description": "The Camelot Gastro Pub je jedinstven restoran u Novom Sadu sa srednjovekovnim ambijentom inspirisanim viteškim doba. U meniju se ističu Roštilj, Ćevapi, Pljeskavica, kao i Pečena Riba i Gulaš uz bogat izbor Burgera i Steak-a. Osim toga, tu su Supa, Salate i Desert opcije koje upotpunjuju obrok. Poznat je po velikim porcijama i prijatnoj usluzi, idealan za druženja, ručak ili večeru. Enterijer je dekorisan mačevima, štitovima i elementima iz srednjeg veka, stvarajući atmosferu drugačiju od gotovo svakog restorana u gradu.",
+    "Image URLs": []
+  },
+  {
+    "ID": 1138,
+    "Name": "Project 72 Wine & Deli",
+    "Location": "Novi Sad",
+    "Dishes": "Supa, Prilozi, Jela od mesa, Salate, Desert, Ćevapi, Gulaš, Punjene Paprike, Pečena Riba, Riblja Čorba",
+    "Price Range": "High",
+    "Address": "Kosovska 15, Novi Sad",
+    "Phone": "+381 21 6572720",
+    "Website": "https://project72.rs/",
+    "Description": "Project 72 Wine & Deli je vrhunski restoran u Novom Sadu koji kreativno kombinuje tradicionalne srpske ukuse i moderne kulinarske tehnike. Na meniju se nalaze Supa, Prilozi, Jela od mesa, Salate i Desert, uz specijalitete kao što su Ćevapi, Gulaš, Punjene Paprike, Pečena Riba i Riblja Čorba. Ambijent je elegentan i topao, sa pažljivo uređenom dekoracijom i odličnom vinskom kartom. Usluga je izuzetno profesionalna i detaljna, savršena za specijalne prilike, večere i gastronomske doživljaje. Često je izbor broj jedan za one koji žele da iskuse nešto posebno u Novom Sadu.",
+    "Image URLs": []
+  },
+  {
+    "ID": 1139,
+    "Name": "Restoran Kod Fazana 1822",
+    "Location": "Novi Sad",
+    "Dishes": "Punjene Paprike, Jela od mesa, Salate, Supa, Desert, Burger, Prilozi, Ćevapi, Gulaš, Pečena Riba",
+    "Price Range": "Medium",
+    "Address": "Njegoševa 9, Novi Sad",
+    "Phone": "+381 60 0701655",
+    "Website": "http://kodfazana1822.rs/",
+    "Description": "Restoran Kod Fazana 1822 je dragulj u srcu Novog Sada, smešten u istorijskoj zgradi bogatoj tradicijom. U svom meniju kombinuje lokalne specijalitete i internacionalne uticaje — Punjene Paprike, Jela od mesa, Salate, Supa i Desert, uz Burger opcije i Pečenu Ribu. Ambijent je elegantan ali topao, sa pažljivo negovanom baštom, odličan za večeru i proslavu. Osoblje je ljubazno, a atmosfera odiše istorijom i kulturnim nasleđem, što ga čini mestom za posebne prilike i opuštene večere.",
+    "Image URLs": []
+  },
+
+  {
+    "ID": 1140,
+    "Name": "Plava Frajla",
+    "Location": "Novi Sad",
+    "Dishes": "Sarma, Punjene Paprike, Supa, Palacinke, Karađorđeva Šnicla, Jela sa roštilja, Podvarak, Pljeskavica, Pečena Riba, Deserti",
+    "Price Range": "Medium",
+    "Address": "Sutjeska 2, Novi Sad",
+    "Phone": "+381 21 6613675; +381 21 4882420",
+    "Website": "http://plavafrajla.rs",
+    "Description": "Plava Frajla je jedan od vodećih restorana nacionalne kuhinje u Novom Sadu, smešten na adresi Sutjeska 2. Specijalizovana je za jela sa roštilja, jela ispod sača, domaće pite, te bogat izbor tradicionalnih jela kao što su Sarma, Punjene Paprike, Karađorđeva Šnicla i Pljeskavica. U meniju su i Supa, Podvarak, Pečena Riba i raznovrsni Deserti. Restoran ima veliku baštu, zimski deo i letnju terasu, idealan za uživanje i relaksaciju. Atmosfera je prijatna i domaćinska, često sa tamburaškom muzikom vikendom.",
+    "Image URLs": []
+  },
+  {
+    "ID": 1141,
+    "Name": "Fish & Zeleniš",
+    "Location": "Novi Sad",
+    "Dishes": "Pečena Riba, Riblja Čorba, Salate, Supe, Steak, Pasta, Burger, Deserti, Jela od ribe, Prilozi",
+    "Price Range": "High",
+    "Address": "Skerlićeva 1, Novi Sad",
+    "Phone": "+381 21 452000; +381 62 258452",
+    "Website": "https://www.fishizelenis.com",
+    "Description": "Fish & Zeleniš je restoran u Novom Sadu koji kombinuje mediteranske i vojvođanske ukuse u modernom ambijentu. Posebna pažnja se posvećuje jelima od ribe i morskim specijalitetima – Pečena Riba, Riblja Čorba, ali i bogatim izborom Salata, Supa, Steak-a i domaćih Priloga. U meniju se nalaze i Burgeri, Pasta i Deserti, što omogućava raznovrsnost za sve ukuse. Restoran ima elegantan enterijer, profesionalnu uslugu i prijatnu atmosferu, idealan za večeru, obrok sa prijateljima ili specijalne prilike. Hrana je sveža, sastojci lokalni, a dekor inspirisan mediteranskim stilom.",
+    "Image URLs": []
+  },
+
+  {
+    "ID": 1142,
+    "Name": "Le Klok Bistro",
+    "Location": "Novi Sad",
+    "Dishes": "Supa, Francuska supa od luka, Jagnjetina, File brancina, Steak, Jela od mesa, Salate, Desert, Rolovana zečetina, Rižoto po izboru kuvara",
+    "Price Range": "High",
+    "Address": "Prote Mihaldžića 6, Novi Sad",
+    "Phone": "+381 64 886 7667",
+    "Website": "",
+    "Description": "Le Klok Bistro je elegantan bistro u Novom Sadu poznat po kreativnoj fuziji internacionalne kuhinje i tradicionalnih ukusa. U meniju dominiraju Supa, Steak, File brancina, Jagnjetina i Rolovana zečetina, uz raznovrsne Salate i Desert. Ambijent je vrhunski uređen, sa pažnjom za svaki detalj, idealan za večere u dvoje ili poslovne susrete. Osoblje je profesionalno i predusretljivo, a atmosfera sofisticirana. Kuvar koristi sveže namirnice i estetiku serviranja koja olakšava uživanje svakog gostovanja.",
+    "Image URLs": []
+  },
+  {
+    "ID": 1143,
+    "Name": "Restoran Alla Lanterna",
+    "Location": "Novi Sad",
+    "Dishes": "Pizza, Taste of Italija (Paste, Njoke, Lazanje), Steak, Jela od mesa, Desert, Tortelini, Glavna jela sa piletinom, Ćevapi, Salate, Pečena Riba",
+    "Price Range": "High",
+    "Address": "Dunavska 27, Novi Sad",
+    "Phone": "+381 21 6622 002",
+    "Website": "https://www.allalanterna.rs",
+    "Description": "Restoran Alla Lanterna smešten je u Dunavskoj ulici u Novom Sadu, romantican ambijent starog grada koji kombinuje italijanske i mediteranske ukuse. U ponudi su Pizza, Paste, Njoke i Lazanje, ali takođe Steak i raznovrsna Glavna jela sa piletinom i jelima od mesa. Među specijalitetima su Desert, Tortelini, Salate i Pečena Riba. Atmosfera je prijatna, sa velikom baštom i pogledom ka parku, idealna za večeru ili sastanak. Osoblje je ljubazno, usluga profesionalna, a ambijent šarmantan.",
+    "Image URLs": []
+  },
+  {
+    "ID": 1144,
+    "Name": "Restoran Sokače",
+    "Location": "Novi Sad",
+    "Dishes": "Roštilj, Ćevapi, Pljeskavica, Supa, Sarma, Jagnjetina, Jela od mesa, Riblja Čorba, Pečena Riba, Salate",
+    "Price Range": "Medium",
+    "Address": "Pavla Papa 11, Novi Sad",
+    "Phone": "+381 21 6622 007; +381 63 725 9215",
+    "Website": "https://www.sokace.rs",
+    "Description": "Restoran Sokače je jedno od najprepoznatljivijih mesta u Novom Sadu za ljubitelje domaće kuhinje. Specijalizovan je za Roštilj, Ćevapi, Pljeskavica, kao i bogat izbor tradicionalnih jela kao što su Supa, Sarma i Jagnjetina. Takođe u ponudi imaju Jela od mesa, Riblja Čorba, Pečena Riba i Salate. Ambijent je topao, sa tradicijom ugostiteljstva i prijatnim osobljem, idealno za porodične obroke i veče sa prijateljima. Usluga je profesionalna, a prostor udoban i prostran.",
+    "Image URLs": []
+  },
+
+  {
+    "ID": 1145,
+    "Name": "Lazin Salaš",
+    "Location": "Novi Sad",
+    "Dishes": "Sarma, Punjene Paprike, Supa, Gulaš, Jagnjetina, Ćevapi, Pljeskavica, Riblja Čorba, Pečena Riba, Deserti",
+    "Price Range": "Medium",
+    "Address": "Laze Telečkog 5, Novi Sad",
+    "Phone": "+381 21 6610560; +381 60 0506600",
+    "Website": "https://lazinsalas.com",
+    "Description": "Lazin Salaš je restoran domaće vojvođanske kuhinje u Novom Sadu, poznat po autentičnim specijalitetima i rustičnom, prijatnom ambijentu. U meniju su Sarma, Punjene Paprike, Supa, Gulaš, Jagnjetina, Ćevapi, Pljeskavica, Riblja Čorba i Pečena Riba, uz bogat izbor Deserta. Restoran je pogodan za porodične ručkove, večere uz prijatelje ili proslave na otvorenom. Enterijer kombinuje drvene elemente, baštu i miran ambijent. Usluga je prijateljska, a cene pristojne za kvalitet i količine koje se dobijaju.",
+    "Image URLs": []
+  },
+  {
+    "ID": 1146,
+    "Name": "Piknik",
+    "Location": "Novi Sad",
+    "Dishes": "Riblja Čorba, Pečena Riba, Supa, Salate, Jela od mesa, Steak, Ćevapi, Desert, Jagnjetina, Pljeskavica",
+    "Price Range": "High",
+    "Address": "Ribarsko ostrvo bb, Novi Sad",
+    "Phone": "0691745645",  
+    "Website": "",
+    "Description": "Piknik je restoran sa pogledom na Dunav, u Novom Sadu, koji nudi jedinstvenu kombinaciju prirode i gastronomskog užitka. Meni uključuje Riblja Čorba, Pečena Riba, Supa, Salate, Jela od mesa, Steak, Ćevapi, Jagnjetina i Pljeskavica. Ambijent je ležeran, sa velikom baštom, idealan za duge večere i druženja. Osoblje je uslužno i pažljivo, a porcije obilne i ukusne. Idealno mesto za vikend obedovanje ili romantičnu večeru uz prirodu.",
+    "Image URLs": []
+  },
+  {
+    "ID": 1147,
+    "Name": "Agape Villa",
+    "Location": "Novi Sad",
+    "Dishes": "Steak, Pečena Riba, Supa, Salate, Jela od mesa, Deserti, Ćevapi, Jagnjetina, Pljeskavica, Riblja Čorba",
+    "Price Range": "High",
+    "Address": "Šafarikova 6, Novi Sad",
+    "Phone": "+381 21 3036800",
+    "Website": "https://www.agapevilla.rs",
+    "Description": "Agape Villa je restoran fine dining klase u centru Novog Sada, koji kombinuje tradiciju i inovaciju u gastronomskom iskustvu. Na meniju se nalaze Steak, Pečena Riba, Supa, Salate, razna Jela od mesa, Deserti, Ćevapi, Jagnjetina, Pljeskavica i Riblja Čorba. Enterijer je elegantan, sa pažljivo uređenim detaljima, vinskom kartom i toplom ambijentom. Idealno je mesto za proslavu, večeru uz vino ili poslovni sastanak. Usluga je profesionalna i ambijent na visokom nivou.",
+    "Image URLs": []
+  },
+
+  {
+    "ID": 1148,
+    "Name": "Lanterna Restaurant & Caffe Pizzeria",
+    "Location": "Novi Sad",
+    "Dishes": "Pizza, Pasta, Steak, Deserti, Jela od mesa, Salate, Supa, Ćevapi, Pljeskavica, Pečena Riba",
+    "Price Range": "Medium",
+    "Address": "Dunavska 27, Novi Sad",
+    "Phone": "+381 21 66 22 002",
+    "Website": "https://lanterna.rs/",
+    "Description": "Lanterna je restoran i picerija u Dunavskoj ulici, u samom srcu Novog Sada, poznat po živopisnoj atmosferi i raznovrsnoj ponudi italijanske i lokalne kuhinje. U meniju se nalaze Pizza, Pasta, Steak i Deserti, kao i tradicionalne opcije kao što su Jela od mesa, Supa, Salate, Ćevapi i Pljeskavica. Ambijent je šarmantan, sa prijatnim dekorom i prijatnom uslugom, idealan za večernje druženje ili ručak. Restoran radi do kasno, a lokacija je atraktivna za one koji žele da u spoju istorije i ukusa provedu prijatno vreme.",
+    "Image URLs": []
+  },
+  {
+    "ID": 1749,
+    "Name": "Reka Restaurant",
+    "Location": "Beograd",
+    "Dishes": "Pečena Riba, Jela od ribe, Supa, Salate, Jela od mesa, Prilozi, Desert, Steak, Pasta, Pržena jela",
+    "Price Range": "Medium",
+    "Address": "Kej Oslobođenja 73b, Zemun, Beograd",
+    "Phone": "",
+    "Website": "",
+    "Description": "Reka Restaurant je smešten u Zemunu, na samoj obali reke i nudi prijatan ambijent za uživanje u hrani uz vodu. U ponudi dominiraju Pečena Riba i ostala jela od ribe, ali nude i jela od mesa, Supa, Salate, Prilozi, Desert i Steak. Ambijent je otvoren, sa terasom pored reke, idealan za letnje večeri. Osoblje je profesionalno i ljubazno, a atmosfera opuštena i romantična. Restoran je odličan izbor za one koji traže spoj prirode i gastronomije u Beogradu.",
+    "Image URLs": []
+  },
+  {
+    "ID": 1150,
+    "Name": "Restoran Terasa - Petrovaradin",
+    "Location": "Novi Sad",
+    "Dishes": "Pečena Riba, Jela od mesa, Supa, Salate, Deserti, Steak, Ćevapi, Pljeskavica, Jagnjetina, Sarma",
+    "Price Range": "High",
+    "Address": "Petrovaradinska tvrđava, Novi Sad",
+    "Phone": "+381 21 447 788",
+    "Website": "https://terasa.rs/",
+    "Description": "Restoran Terasa na Petrovaradinskoj tvrđavi pruža veličanstven pogled na grad i Dunav, kombinujući tradicionalne i mediteranske ukuse. U ponudi su Pečena Riba, Steak i Jela od mesa, kao i Supa, Salate, Deserti, Ćevapi, Pljeskavica, Jagnjetina i Sarma. Ambijent je elegantan, sa otvorenom terasom koja je posebno lepa pri zalasku sunca. Usluga je diskretna i profesionalna, idealna za romantične večere i specijalne prilike. Lokacija pored istorijskog sata and vinogradskih vidikovaca daje dodatni šarm obroku.",
+    "Image URLs": []
+  },
+
+  {
+    "ID": 1751,
+    "Name": "Ćiribu Ćiriba",
+    "Location": "Beograd",
+    "Dishes": "Ćevapi, Pljeskavica, Supa, Salate, Jela od mesa, Prilozi, Desert, Burek, Punjene Paprike, Pečena Riba",
+    "Price Range": "Medium",
+    "Address": "Masarikov trg 6, Zemun, Beograd",
+    "Phone": "+381 11 219-43-04; +381 65 5000-230",
+    "Website": "https://restoranciribu.rs/",
+    "Description": "Ćiribu Ćiriba je restoran smešten na Zemunskoj keju, sa prijatnom atmosferom starih kafana i domaćom kuhinjom. U ponudi ima specijalitete poput Ćevapa, Pljeskavice, Supa, Salata, raznih jela od mesa i Priloga. Jelovnik sadrži i Desert, Burek, Punjene Paprike i Pečenu Ribu. Enterijer odiše toplinom, a osoblje je ljubazno i posvećeno. Idealno je mesto za ručak uz reku, večeru ili druženje sa prijateljima.",
+    "Image URLs": []
+  },
+  {
+    "ID": 1752,
+    "Name": "Restoran Šaran",
+    "Location": "Beograd",
+    "Dishes": "Riblja Čorba, Supa, Pečena Riba, Jela od ribe, Jela od mesa, Salate, Gulaš, Prilozi, Desert, Pasta",
+    "Price Range": "High",
+    "Address": "Kej Oslobođenja 53, Zemun, Beograd",
+    "Phone": "+381 11 261-8235; +381 69 261-8235",
+    "Website": "https://saran.co.rs/",
+    "Description": "Restoran Šaran je legendarni riblji restoran na Zemunskoj obali Dunava, poznat po velikom izboru rečnih i morskih specijaliteta. U meniju se ističu Riblja Čorba, Pečena Riba i ostala jela od ribe, ali tu su i jela od mesa, Salate, Gulaš, Supa, Prilozi i Desert. Ambijent je rustičan, sa drvetom i pogledom na reku, idealan za romantične večere i poseban ugođaj. Usluga je profesionalna, a atmosfera topla i prijatna. Restoran često organizuje i tamburašku muziku za goste.",
+    "Image URLs": []
+  },
+  {
+    "ID": 1753,
+    "Name": "Restaurant Venice - Restoran Venecija",
+    "Location": "Beograd",
+    "Dishes": "Pečena Riba, Salate, Jela od mesa, Supa, Prilozi, Desert, Pasta, Steak, Jela od ribe, Salate",
+    "Price Range": "Medium",
+    "Address": "Kej Oslobođenja 6, Zemun, Beograd",
+    "Phone": "066 8383233",
+    "Website": "https://restoranvenecija.com/",
+    "Description": "Restaurant Venecija je istorijski restoran na obali Dunava u Zemunu, simbol starih vremena i boemskog raspoloženja. U ponudi su Pečena Riba i jela od ribe, ali i jela od mesa, Supa, Salate, Prilozi i Desert. Enterijer kombinuje klasične elemente i eleganciju prostora uz pogled na reku. Usluga je diskretna i profesionalna. Mesto je idealno za večernji izlazak, romantiku ili uživanje uz zalazak sunca nad Dunavom.",
+    "Image URLs": [
+
+    ]
   }
+  
 
 ]

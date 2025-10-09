@@ -26,6 +26,6 @@ description: Boss Caffe Picerija je simbol gastronomske scene Subotice. Osnovan 
 <div class="right-column">
     <h2>Slike</h2>
     <div class="images-grid">
-<p>Nema dostupnih slika.</p>
+<img src='https://www.subotica.biz/files/gallery/146/2019.09.13.18.34.07_5d7bc4ff4b741_1.jpg' alt='Boss Caffe Picerija - slika 1'>
     </div>
 </div>

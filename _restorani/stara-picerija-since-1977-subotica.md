@@ -26,6 +26,6 @@ description: Stara Picerija u srcu Subotice je najstarija picerija u Srbiji, sa 
 <div class="right-column">
     <h2>Slike</h2>
     <div class="images-grid">
-<p>Nema dostupnih slika.</p>
+<img src='https://www.starapicerija.com/img/04.jpg' alt='Stara Picerija – Since 1977 - slika 1'>
     </div>
 </div>

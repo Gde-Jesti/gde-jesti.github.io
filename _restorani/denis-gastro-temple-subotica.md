@@ -26,6 +26,6 @@ description: DENIS Gastro Temple je poznat po spoju elegancije i kulinarske izvr
 <div class="right-column">
     <h2>Slike</h2>
     <div class="images-grid">
-<p>Nema dostupnih slika.</p>
+<img src='https://raw.githubusercontent.com/Gde-Jesti/images/refs/heads/main/denis%20gastro%20temple%20subotica.webp' alt='DENIS Gastro Temple - slika 1'>
     </div>
 </div>

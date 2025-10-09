@@ -12,8 +12,8 @@ description: MARA Lounge & Bar u Subotici je moderan ambijent za uživanje u kaf
     <ul>
         <li><strong>Mesto:</strong> Subotica</li>
         <li><strong>Adresa:</strong> Matije Gupca 19, Subotica</li>
-        <li><strong>Telefon:</strong> Nema dostupan telefon</li>
-        <li><strong>Web:</strong> Nema</li>
+        <li><strong>Telefon:</strong> 063 559393</li>
+        <li><strong>Web:</strong> <a href='https://www.instagram.com/mara.lounge.bar/' target='_blank'>https://www.instagram.com/mara.lounge.bar/</a></li>
         <li><strong>Meni:</strong> Kafa, Sendviči, Limunada, Doručak, Pivo, Panceroti, Pileća Korpa, Roštilj, Ovali, Omlet, Palačinke, Salate, Pomfrit</li>
     </ul>
 
@@ -26,6 +26,6 @@ description: MARA Lounge & Bar u Subotici je moderan ambijent za uživanje u kaf
 <div class="right-column">
     <h2>Slike</h2>
     <div class="images-grid">
-<p>Nema dostupnih slika.</p>
+<img src='https://www.subotica.com/files/_thumb/645x430/news/5/5/3/51553/51553-suboticacom-24apr2025-subotica-5200015.jpg' alt='MARA Lounge & Bar - slika 1'>
     </div>
 </div>
